@@ -15,7 +15,7 @@ const external = result.links.filter((l) => !l.url.startsWith(BASE));
 const brokenInternal = internal.filter((l) => l.state === 'BROKEN');
 
 // Fragments: every href="#id" or "/page#id" must match an id on that page.
-const pages = Object.fromEntries(readdirSync('public').filter((f) => f.endsWith('.html')).map((f) => [f, readFileSync(`public/${f}`, 'utf8')]));
+const pages = Object.fromEntries(readdirSync('public', { recursive: true }).map((f) => f.replaceAll('\\', '/')).filter((f) => f.endsWith('.html')).map((f) => [f, readFileSync(`public/${f}`, 'utf8')]));
 const ids = Object.fromEntries(Object.entries(pages).map(([f, html]) => [f, new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))]));
 const brokenFragments = [];
 let fragmentCount = 0;
@@ -23,7 +23,7 @@ for (const [file, html] of Object.entries(pages)) {
   for (const [, href] of html.matchAll(/\shref="([^"]*#[^"]*)"/g)) {
     if (/^(https?:|mailto:|tel:)/.test(href) || href.includes('icons.svg#')) continue;
     const [path, fragment] = href.split('#');
-    const target = path === '' ? file : (path === '/' ? 'index.html' : path.replace(/^\//, ''));
+    const target = path === '' ? file : (path.endsWith('/') ? `${path.slice(1)}index.html` : path.slice(1));
     fragmentCount += 1;
     if (!ids[target]?.has(fragment)) brokenFragments.push(`${file}: ${href}`);
   }

@@ -1,6 +1,6 @@
 # MTI AI SOLUTIONS — public website
 
-The public landing page for **MTI AI SOLUTIONS** (*WHERE INDUSTRY MEETS INTELLIGENCE*), built from the *Landing Page Master Brief* (Release 1.0). It is a static site with no framework and no build step. A small server-side proxy sends contact-form leads to the MTI CRM.
+The public landing page for **MTI AI SOLUTIONS** (*WHERE INDUSTRY MEETS INTELLIGENCE*), built from the *Landing Page Master Brief* (Release 1.0), in English (`/`), German (`/de/`) and Arabic (`/ar/`, right-to-left). It is a static site with no framework. A small generator writes the HTML from one template and three string files, and the generated pages are committed, so hosting needs no build step. A small server-side proxy sends contact-form leads to the MTI CRM.
 
 - Design and decisions: [docs/PLAN.md](docs/PLAN.md)
 - Test results, Lighthouse scores and the brief's pre-launch checklist: [docs/QA-REPORT.md](docs/QA-REPORT.md)
@@ -10,7 +10,10 @@ The public landing page for **MTI AI SOLUTIONS** (*WHERE INDUSTRY MEETS INTELLIG
 
 | Path | What it is |
 | --- | --- |
-| `public/` | The deployable site: `index.html`, legal placeholder pages, `404.html`, `robots.txt`, `sitemap.xml`, and assets (CSS, JS modules, fonts, logo, icons) |
+| `src/template.mjs` | The one page template. It holds everything that must not vary by language: the company name, the English tagline, official addresses and contact data, digits, the hexagon visual, and the English CRM enum values |
+| `src/i18n/en.json` · `de.json` · `ar.json` | All page strings. `en.json` is the approved brief copy; `de.json` and `ar.json` are machine drafts pending MTI review |
+| `scripts/build-site.mjs` | Generates `public/index.html`, `public/de/index.html`, `public/ar/index.html`, the legal placeholders, `404.html` and `sitemap.xml`. Run `npm run build` after editing `src/`; `npm run build:check` fails if the committed pages are out of date |
+| `public/` | The deployable site: the generated pages, `robots.txt`, `site.webmanifest`, and assets (CSS, JS modules, fonts, logo, icons, OG images) |
 | `public/assets/js/lead-rules.js` | Form rules shared by the browser and the proxy: the approved industry, service and timeline strings, length limits, and validation |
 | `public/assets/js/site-config.js` | `BOOKING_URL` and the analytics hook |
 | `lib/lead-proxy.mjs` | Proxy core: validates the lead, removes unknown fields, adds `X-Website-Secret`, forwards to the CRM, and maps CRM responses |
@@ -53,8 +56,9 @@ node tests/mock-crm.mjs     # fake CRM on http://127.0.0.1:4010, secret "test-se
 ## Tests and QA
 
 ```bash
-npm test                # unit tests: lead rules + proxy (header, status mapping, field stripping, secret never logged)
-npm run test:e2e        # Playwright: content, form behaviour, mocked end-to-end submit, axe, keyboard (1440 and 390 px)
+npm run build:check     # generated pages match src/ (template + string files)
+npm test                # unit tests: lead rules, proxy (header, status mapping, field stripping, secret never logged), translations
+npm run test:e2e        # Playwright, EN/DE/AR at 1440 and 390 px: content, form, mocked end-to-end submit, axe, keyboard
 npm run test:php        # PHP proxy smoke test against the mock CRM
 npm run validate:html   # W3C Nu HTML checker
 npm run check:links     # linkinator crawl + #fragment check
@@ -133,6 +137,20 @@ Keep `proxy_set_header Host $host`: the proxy compares the browser's `Origin` wi
 
 The PHP proxy filters the same fields, checks the honeypot and size limit, and maps CRM responses the same way. Detailed field validation is left to the CRM's 422 response. PHP 8.1+ with the cURL extension is required.
 
+## Languages
+
+| Page | `lang` / `dir` | Strings | Status |
+| --- | --- | --- | --- |
+| `/` | `en` / `ltr` | `src/i18n/en.json` | Approved brief copy (the source of truth) |
+| `/de/` | `de` / `ltr` | `src/i18n/de.json` | Machine draft, pending MTI review |
+| `/ar/` | `ar` / `rtl` | `src/i18n/ar.json` | Machine draft, pending MTI review |
+
+- **Brand rule:** the company name "MTI AI SOLUTIONS" and the tagline "WHERE INDUSTRY MEETS INTELLIGENCE" stay in English on every page. Official addresses, the phone number, email and URLs are also identical in all languages.
+- **CRM values:** the form always sends the exact English strings for industry, services and timeline (option `value`s come from `lead-rules.js`). Only labels and messages are translated, and country names are localized in the browser while the value stays the ISO code.
+- **Switcher:** EN / DE / AR links in the header (inside the menu on mobile). They are plain links, with no cookies, storage or automatic redirect. Each page lists all three as `hreflang` alternates plus `x-default`, and so does `sitemap.xml`.
+- **Arabic:** Cairo (self-hosted) is preloaded on `/ar/` only. The layout mirrors through CSS logical properties (navigation, cards, timeline, form), while digits and the hexagon visual stay unchanged. Phone numbers, emails and Latin addresses are isolated with `<bdi>` so they read left to right.
+- **Legal pages and 404** exist in English only, for now. They are placeholders until MTI supplies the text.
+
 ## How the contact form works
 
 - The browser validates required fields, email format and consent, and shows an error summary and inline errors. The proxy validates again with the same `lead-rules.js`, and the CRM validates a third time.
@@ -156,5 +174,6 @@ The PHP proxy filters the same fields, checks the honeypot and size limit, and m
   2. Subscribe: `document.addEventListener('mti:track', (e) => gtag('event', e.detail.event, e.detail));`
   3. Add a consent banner if the chosen tool sets cookies, and update the Cookie Policy page.
 - **Legal pages.** `public/privacy.html`, `terms.html` and `cookies.html` are placeholders marked "to be completed by MTI AI SOLUTIONS" and use `noindex`. After adding the real text, remove `noindex` and add the pages to `sitemap.xml`.
-- **Header or footer changes.** Edit them in `index.html`, then run `npm run build:pages` to regenerate the legal pages and `404.html`.
+- **Text changes.** Edit the string files in `src/i18n/` (or `src/template.mjs` for structure), then run `npm run build` and commit the regenerated `public/` files. Never edit the generated HTML by hand: `npm run build:check` and the QA run will flag it.
+- **Social images.** After changing a hero headline, run `npm run build:og` to re-render `og-image.png`, `og-image-de.png` and `og-image-ar.png`.
 - **Inline script hash.** The only inline script (which adds the `js` class) is allowed by a CSP hash in `netlify.toml`, `server/node-server.mjs` and `server/php/.htaccess`. If you change that script, update the hash in all three files.

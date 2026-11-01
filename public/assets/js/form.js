@@ -1,7 +1,9 @@
 // Contact form: client-side validation, payload, submit, success/error states, browser rate limit.
 // Server-side validation happens again in the /api/contact proxy (same rules) and in the CRM.
+// Labels and messages follow the page language (strings in the #i18n data block); the values sent to the
+// CRM are always the exact English enum strings from lead-rules.js.
 import { COUNTRIES } from './countries.js';
-import { HONEYPOT, sanitizeLead, validateLead } from './lead-rules.js';
+import { HONEYPOT, MESSAGES_EN, sanitizeLead, validateLead } from './lead-rules.js';
 import { track } from './site-config.js';
 
 const ENDPOINT = '/api/contact';
@@ -10,6 +12,11 @@ const WINDOW_MS = 10 * 60_000;
 const MAX_PER_WINDOW = 5;
 const STORAGE_KEY = 'mti-contact-attempts';
 const CONTACT_FALLBACK = { email: 'info@mtiaisolutions.com', whatsapp: 'https://wa.me/201055778871', phone: '+20 105 577 8871' };
+
+const I18N = readI18n();
+const LANG = I18N.lang;
+const M = I18N.messages;
+const plural = (forms, n) => (forms[new Intl.PluralRules(LANG).select(n)] ?? forms.other).replace('{n}', String(n));
 
 const form = document.getElementById('lead-form');
 if (form) initForm(form);
@@ -25,9 +32,12 @@ function initForm(form) {
   const field = (key) => form.querySelector(`[data-field="${key}"]`);
   const control = (name) => form.elements.namedItem(name);
 
-  // Countries come from the bundled ISO 3166-1 list (value = alpha-2 code).
+  // Countries come from the bundled ISO 3166-1 list (value = alpha-2 code); names follow the page language.
   const country = control('country');
-  country.append(...COUNTRIES.map(([code, label]) => new Option(label, code)));
+  const regionNames = LANG === 'en' ? null : new Intl.DisplayNames([LANG], { type: 'region' });
+  const countries = COUNTRIES.map(([code, label]) => [code, regionNames?.of(code) || label]);
+  if (regionNames) countries.sort((a, b) => a[1].localeCompare(b[1], LANG));
+  country.append(...countries.map(([code, label]) => new Option(label, code)));
 
   // Live character count for the message.
   const message = control('message');
@@ -123,7 +133,7 @@ function initForm(form) {
 
   /* ---------- Validation as the user goes ---------- */
   function revalidate(key) {
-    const errors = validateLead(sanitizeLead(collect()));
+    const errors = validateLead(sanitizeLead(collect()), M.fields);
     setFieldError(key, errors[key]?.[0] || '');
   }
   form.addEventListener('focusout', (e) => {
@@ -145,11 +155,16 @@ function initForm(form) {
     const p = document.createElement('p');
     p.append(icon('circle-alert'));
     if (kind === 'rate') {
-      p.append("We've received several requests from your connection. Please try again in a few minutes.");
+      p.append(M.rateLimited);
     } else {
-      p.append("We couldn't send your message right now. Please try again, or contact us directly at ");
-      p.append(linkTo(`mailto:${CONTACT_FALLBACK.email}`, CONTACT_FALLBACK.email), ' or on WhatsApp ');
-      p.append(linkTo(CONTACT_FALLBACK.whatsapp, CONTACT_FALLBACK.phone, true), '.');
+      const links = {
+        email: linkTo(`mailto:${CONTACT_FALLBACK.email}`, CONTACT_FALLBACK.email),
+        whatsapp: linkTo(CONTACT_FALLBACK.whatsapp, CONTACT_FALLBACK.phone, true),
+      };
+      // Split the translated sentence on {email} / {whatsapp} and put the links in place.
+      for (const part of M.generic.split(/(\{email\}|\{whatsapp\})/)) {
+        p.append(part === '{email}' ? links.email : part === '{whatsapp}' ? links.whatsapp : part);
+      }
     }
     alertBox.replaceChildren(p);
     alertBox.classList.add('is-visible');
@@ -171,12 +186,12 @@ function initForm(form) {
     const now = Date.now();
     if (list.length >= MAX_PER_WINDOW) {
       const minutes = Math.ceil((WINDOW_MS - (now - list[0])) / 60_000);
-      return `You've sent several requests in a short time. Please try again in ${minutes} minute${minutes === 1 ? '' : 's'}.`;
+      return plural(M.tryMinutes, minutes);
     }
     const last = list.at(-1);
     if (last && now - last < MIN_INTERVAL_MS) {
       const seconds = Math.ceil((MIN_INTERVAL_MS - (now - last)) / 1000);
-      return `Please wait ${seconds} second${seconds === 1 ? '' : 's'} before sending again.`;
+      return plural(M.waitSeconds, seconds);
     }
     return '';
   }
@@ -185,7 +200,7 @@ function initForm(form) {
     inFlight = busy;
     submit.disabled = busy;
     form.setAttribute('aria-busy', String(busy));
-    submitLabel.textContent = busy ? 'Sending…' : 'Send Message';
+    submitLabel.textContent = busy ? M.sending : M.submit;
   }
 
   function showSuccess(reference) {
@@ -210,7 +225,7 @@ function initForm(form) {
     clearAlert();
 
     const lead = sanitizeLead(collect());
-    const errors = validateLead(lead);
+    const errors = validateLead(lead, M.fields);
     if (Object.keys(errors).length) {
       Object.keys(errors).forEach((k) => touched.add(k));
       showErrors(errors);
@@ -250,7 +265,13 @@ function initForm(form) {
       return;
     }
     track('form_submit_error', { status });
-    if (status === 422) showErrors(data.errors && typeof data.errors === 'object' ? data.errors : {}, data.message || 'Please check the highlighted fields.');
+    if (status === 422) {
+      // CRM and proxy messages are English; other languages show the localized message for each field.
+      const serverErrors = data.errors && typeof data.errors === 'object' ? data.errors : {};
+      const errorsToShow = LANG === 'en' ? serverErrors
+        : Object.fromEntries(Object.keys(serverErrors).map((k) => [k, [M.fields[k]?.invalid || M.checkFields]]));
+      showErrors(errorsToShow, LANG === 'en' && data.message ? data.message : M.checkFields);
+    }
     else if (status === 429) showAlert('rate');
     else showAlert('generic');
   });
@@ -270,11 +291,33 @@ function icon(id) {
 function linkTo(href, text, newTab = false) {
   const a = document.createElement('a');
   a.href = href;
-  a.textContent = text;
+  a.append(Object.assign(document.createElement('bdi'), { textContent: text }));
   if (newTab) {
     a.target = '_blank';
     a.rel = 'noopener';
-    a.append(Object.assign(document.createElement('span'), { className: 'visually-hidden', textContent: ' (opens in a new tab)' }));
+    a.append(Object.assign(document.createElement('span'), { className: 'visually-hidden', textContent: ` ${M.newTab}` }));
   }
   return a;
+}
+
+/** Page strings from <script type="application/json" id="i18n">; English fallback if absent. */
+function readI18n() {
+  try {
+    const data = JSON.parse(document.getElementById('i18n').textContent);
+    if (data?.messages?.fields) return data;
+  } catch { /* fall through */ }
+  return {
+    lang: 'en',
+    messages: {
+      fields: MESSAGES_EN,
+      checkFields: 'Please check the highlighted fields.',
+      rateLimited: "We've received several requests from your connection. Please try again in a few minutes.",
+      generic: "We couldn't send your message right now. Please try again, or contact us directly at {email} or on WhatsApp {whatsapp}.",
+      waitSeconds: { one: 'Please wait {n} second before sending again.', other: 'Please wait {n} seconds before sending again.' },
+      tryMinutes: { one: "You've sent several requests in a short time. Please try again in {n} minute.", other: "You've sent several requests in a short time. Please try again in {n} minutes." },
+      sending: 'Sending…',
+      submit: 'Send Message',
+      newTab: '(opens in a new tab)',
+    },
+  };
 }

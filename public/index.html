@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +7,10 @@
   <title>MTI AI SOLUTIONS — AI, Automation &amp; Custom Software for Businesses</title>
   <meta name="description" content="MTI AI SOLUTIONS engineers AI solutions, custom software and intelligent automation that help businesses across industries run smarter operations.">
   <link rel="canonical" href="https://mtiaisolutions.com/">
+  <link rel="alternate" hreflang="en" href="https://mtiaisolutions.com/">
+  <link rel="alternate" hreflang="de" href="https://mtiaisolutions.com/de/">
+  <link rel="alternate" hreflang="ar" href="https://mtiaisolutions.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://mtiaisolutions.com/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0D1B3E">
   <meta property="og:type" content="website">
@@ -19,6 +23,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="MTI AI SOLUTIONS — WHERE INDUSTRY MEETS INTELLIGENCE">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="ar_AR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MTI AI SOLUTIONS — Transforming Businesses Through Artificial Intelligence">
   <meta name="twitter:description" content="Intelligent AI solutions, custom software, and advanced automation systems for businesses across industries.">
@@ -32,8 +38,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
   <script type="module" src="/assets/js/main.js"></script>
   <script type="module" src="/assets/js/form.js"></script>
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MTI AI SOLUTIONS",
@@ -48,11 +53,96 @@
       "addressLocality": "Cairo",
       "addressCountry": "EG"
     },
-    "sameAs": ["https://www.linkedin.com/company/mti-solutions-g/"]
-  }
-  </script>
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Egypt office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre",
+          "addressLocality": "Cairo",
+          "addressCountry": "EG"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Germany office",
+        "address": {
+          "@type": "PostalAddress",
+          "name": "MTI AI SOLUTIONS UG",
+          "streetAddress": "Friedrichstraße 95",
+          "postalCode": "10117",
+          "addressLocality": "Berlin",
+          "addressCountry": "DE"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/mti-solutions-g/"
+    ]
+  }</script>
+  <script type="application/json" id="i18n">{
+    "lang": "en",
+    "messages": {
+      "fields": {
+        "name": {
+          "required": "Please enter your full name.",
+          "invalid": "Please enter a valid full name.",
+          "tooLong": "Your full name must be {max} characters or fewer."
+        },
+        "business_email": {
+          "required": "Please enter your business email.",
+          "invalid": "Please enter a valid email address, for example name@company.com.",
+          "tooLong": "Your business email must be {max} characters or fewer."
+        },
+        "company": {
+          "required": "Please enter your company name.",
+          "invalid": "Please enter a valid company name.",
+          "tooLong": "Your company name must be {max} characters or fewer."
+        },
+        "phone": {
+          "invalid": "Please enter a valid phone number, using digits and optionally + ( ) - .",
+          "tooLong": "Your phone number must be {max} characters or fewer."
+        },
+        "country": {
+          "invalid": "Please choose a country from the list."
+        },
+        "industry": {
+          "invalid": "Please choose an industry from the list."
+        },
+        "interested_services": {
+          "invalid": "Please choose services from the list."
+        },
+        "timeline": {
+          "invalid": "Please choose a project timeline from the list."
+        },
+        "message": {
+          "invalid": "Please enter a valid message.",
+          "tooLong": "Your message must be {max} characters or fewer."
+        },
+        "consent": {
+          "required": "Please confirm that we may use your information to respond to your enquiry."
+        }
+      },
+      "checkFields": "Please check the highlighted fields.",
+      "rateLimited": "We've received several requests from your connection. Please try again in a few minutes.",
+      "generic": "We couldn't send your message right now. Please try again, or contact us directly at {email} or on WhatsApp {whatsapp}.",
+      "waitSeconds": {
+        "one": "Please wait {n} second before sending again.",
+        "other": "Please wait {n} seconds before sending again."
+      },
+      "tryMinutes": {
+        "one": "You've sent several requests in a short time. Please try again in {n} minute.",
+        "other": "You've sent several requests in a short time. Please try again in {n} minutes."
+      },
+      "sending": "Sending…",
+      "submit": "Send Message",
+      "newTab": "(opens in a new tab)"
+    }
+  }</script>
 </head>
 <body>
+  <!-- Generated by scripts/build-site.mjs from src/template.mjs and src/i18n/en.json. Do not edit by hand. -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header on-dark">
@@ -66,7 +156,7 @@
         <span>Menu</span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
-        <ul>
+        <ul class="nav-links">
           <li><a href="#solutions">Solutions</a></li>
           <li><a href="#industries">Industries</a></li>
           <li><a href="#why-mti">Why MTI</a></li>
@@ -74,6 +164,11 @@
           <li><a href="#technology">Technology</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li class="nav-cta"><a class="btn btn-primary" href="#contact" data-track="cta" data-focus="#contact-title">Discuss Your Project</a></li>
+        </ul>
+        <ul class="lang-switch" aria-label="Language">
+          <li><a href="/" hreflang="en" lang="en" aria-current="page">EN<span class="visually-hidden"> – English</span></a></li>
+          <li><a href="/de/" hreflang="de" lang="de">DE<span class="visually-hidden"> – Deutsch</span></a></li>
+          <li><a href="/ar/" hreflang="ar" lang="ar">AR<span class="visually-hidden"> – العربية</span></a></li>
         </ul>
       </nav>
     </div>
@@ -84,7 +179,7 @@
     <section class="hero section-dark on-dark" id="home" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="brand-signature">
+          <p class="brand-signature" lang="en">
             <span class="sig-name">MTI AI SOLUTIONS</span>
             <span class="sig-tagline">WHERE INDUSTRY MEETS INTELLIGENCE</span>
           </p>
@@ -105,61 +200,61 @@
                 <stop offset="1" stop-color="#00C8FF"/>
               </linearGradient>
             </defs>
-              <line x1="308.7" y1="62.0" x2="392.9" y2="109.7" class="hv-ring"/>
-              <line x1="392.9" y1="109.7" x2="441.6" y2="192.3" class="hv-ring"/>
-              <line x1="441.6" y1="192.3" x2="441.6" y2="287.7" class="hv-ring"/>
-              <line x1="441.6" y1="287.7" x2="392.9" y2="370.3" class="hv-ring"/>
-              <line x1="392.9" y1="370.3" x2="308.7" y2="418.0" class="hv-ring"/>
-              <line x1="308.7" y1="418.0" x2="211.3" y2="418.0" class="hv-ring"/>
-              <line x1="211.3" y1="418.0" x2="127.1" y2="370.3" class="hv-ring"/>
-              <line x1="127.1" y1="370.3" x2="78.4" y2="287.7" class="hv-ring"/>
-              <line x1="78.4" y1="287.7" x2="78.4" y2="192.3" class="hv-ring"/>
-              <line x1="78.4" y1="192.3" x2="127.1" y2="109.7" class="hv-ring"/>
-              <line x1="127.1" y1="109.7" x2="211.3" y2="62.0" class="hv-ring"/>
-              <line x1="211.3" y1="62.0" x2="308.7" y2="62.0" class="hv-ring"/>
-              <line x1="279.0" y1="170.5" x2="304.4" y2="77.5" class="hv-link"/>
-              <line x1="311.4" y1="189.6" x2="381.5" y2="120.9" class="hv-link"/>
-              <line x1="329.6" y1="221.7" x2="426.1" y2="196.4" class="hv-link"/>
-              <line x1="329.6" y1="258.3" x2="426.1" y2="283.6" class="hv-link"/>
-              <line x1="311.4" y1="290.4" x2="381.5" y2="359.1" class="hv-link"/>
-              <line x1="279.0" y1="309.5" x2="304.4" y2="402.5" class="hv-link"/>
-              <line x1="241.0" y1="309.5" x2="215.6" y2="402.5" class="hv-link"/>
-              <line x1="208.6" y1="290.4" x2="138.5" y2="359.1" class="hv-link"/>
-              <line x1="190.4" y1="258.3" x2="93.9" y2="283.6" class="hv-link"/>
-              <line x1="190.4" y1="221.7" x2="93.9" y2="196.4" class="hv-link"/>
-              <line x1="208.6" y1="189.6" x2="138.5" y2="120.9" class="hv-link"/>
-              <line x1="241.0" y1="170.5" x2="215.6" y2="77.5" class="hv-link"/>
-              <path d="M308.7 62.0 Q260 240 392.9 370.3" class="hv-arc"/>
-              <path d="M441.6 192.3 Q260 240 127.1 370.3" class="hv-arc"/>
-              <path d="M308.7 418.0 Q260 240 78.4 192.3" class="hv-arc"/>
-              <path d="M78.4 287.7 Q260 240 211.3 62.0" class="hv-arc"/>
-              <polygon points="260.0,144.0 343.1,192.0 343.1,288.0 260.0,336.0 176.9,288.0 176.9,192.0" class="hv-halo"/>
-              <polygon points="260.0,170.0 320.6,205.0 320.6,275.0 260.0,310.0 199.4,275.0 199.4,205.0" class="hv-core"/>
-              <polygon points="260.0,194.0 299.8,217.0 299.8,263.0 260.0,286.0 220.2,263.0 220.2,217.0" class="hv-core-inner"/>
-              <polygon points="308.7,48.0 320.8,55.0 320.8,69.0 308.7,76.0 296.5,69.0 296.5,55.0" class="hv-node hv-cyan"/>
-              <polygon points="392.9,95.7 405.1,102.7 405.1,116.7 392.9,123.7 380.8,116.7 380.8,102.7" class="hv-node hv-blue hv-pulse"/>
-              <polygon points="441.6,178.3 453.7,185.3 453.7,199.3 441.6,206.3 429.5,199.3 429.5,185.3" class="hv-node hv-gold"/>
-              <polygon points="441.6,273.7 453.7,280.7 453.7,294.7 441.6,301.7 429.5,294.7 429.5,280.7" class="hv-node hv-cyan"/>
-              <polygon points="392.9,356.3 405.1,363.3 405.1,377.3 392.9,384.3 380.8,377.3 380.8,363.3" class="hv-node hv-blue"/>
-              <polygon points="308.7,404.0 320.8,411.0 320.8,425.0 308.7,432.0 296.5,425.0 296.5,411.0" class="hv-node hv-gold hv-pulse"/>
-              <polygon points="211.3,404.0 223.5,411.0 223.5,425.0 211.3,432.0 199.2,425.0 199.2,411.0" class="hv-node hv-cyan"/>
-              <polygon points="127.1,356.3 139.2,363.3 139.2,377.3 127.1,384.3 114.9,377.3 114.9,363.3" class="hv-node hv-blue"/>
-              <polygon points="78.4,273.7 90.5,280.7 90.5,294.7 78.4,301.7 66.3,294.7 66.3,280.7" class="hv-node hv-gold"/>
-              <polygon points="78.4,178.3 90.5,185.3 90.5,199.3 78.4,206.3 66.3,199.3 66.3,185.3" class="hv-node hv-cyan hv-pulse"/>
-              <polygon points="127.1,95.7 139.2,102.7 139.2,116.7 127.1,123.7 114.9,116.7 114.9,102.7" class="hv-node hv-blue"/>
-              <polygon points="211.3,48.0 223.5,55.0 223.5,69.0 211.3,76.0 199.2,69.0 199.2,55.0" class="hv-node hv-gold"/>
-              <circle cx="308.7" cy="62.0" r="3" class="hv-dot"/>
-              <circle cx="392.9" cy="109.7" r="3" class="hv-dot"/>
-              <circle cx="441.6" cy="192.3" r="3" class="hv-dot"/>
-              <circle cx="441.6" cy="287.7" r="3" class="hv-dot"/>
-              <circle cx="392.9" cy="370.3" r="3" class="hv-dot"/>
-              <circle cx="308.7" cy="418.0" r="3" class="hv-dot"/>
-              <circle cx="211.3" cy="418.0" r="3" class="hv-dot"/>
-              <circle cx="127.1" cy="370.3" r="3" class="hv-dot"/>
-              <circle cx="78.4" cy="287.7" r="3" class="hv-dot"/>
-              <circle cx="78.4" cy="192.3" r="3" class="hv-dot"/>
-              <circle cx="127.1" cy="109.7" r="3" class="hv-dot"/>
-              <circle cx="211.3" cy="62.0" r="3" class="hv-dot"/>
+            <line x1="308.7" y1="62.0" x2="392.9" y2="109.7" class="hv-ring"/>
+            <line x1="392.9" y1="109.7" x2="441.6" y2="192.3" class="hv-ring"/>
+            <line x1="441.6" y1="192.3" x2="441.6" y2="287.7" class="hv-ring"/>
+            <line x1="441.6" y1="287.7" x2="392.9" y2="370.3" class="hv-ring"/>
+            <line x1="392.9" y1="370.3" x2="308.7" y2="418.0" class="hv-ring"/>
+            <line x1="308.7" y1="418.0" x2="211.3" y2="418.0" class="hv-ring"/>
+            <line x1="211.3" y1="418.0" x2="127.1" y2="370.3" class="hv-ring"/>
+            <line x1="127.1" y1="370.3" x2="78.4" y2="287.7" class="hv-ring"/>
+            <line x1="78.4" y1="287.7" x2="78.4" y2="192.3" class="hv-ring"/>
+            <line x1="78.4" y1="192.3" x2="127.1" y2="109.7" class="hv-ring"/>
+            <line x1="127.1" y1="109.7" x2="211.3" y2="62.0" class="hv-ring"/>
+            <line x1="211.3" y1="62.0" x2="308.7" y2="62.0" class="hv-ring"/>
+            <line x1="279.0" y1="170.5" x2="304.4" y2="77.5" class="hv-link"/>
+            <line x1="311.4" y1="189.6" x2="381.5" y2="120.9" class="hv-link"/>
+            <line x1="329.6" y1="221.7" x2="426.1" y2="196.4" class="hv-link"/>
+            <line x1="329.6" y1="258.3" x2="426.1" y2="283.6" class="hv-link"/>
+            <line x1="311.4" y1="290.4" x2="381.5" y2="359.1" class="hv-link"/>
+            <line x1="279.0" y1="309.5" x2="304.4" y2="402.5" class="hv-link"/>
+            <line x1="241.0" y1="309.5" x2="215.6" y2="402.5" class="hv-link"/>
+            <line x1="208.6" y1="290.4" x2="138.5" y2="359.1" class="hv-link"/>
+            <line x1="190.4" y1="258.3" x2="93.9" y2="283.6" class="hv-link"/>
+            <line x1="190.4" y1="221.7" x2="93.9" y2="196.4" class="hv-link"/>
+            <line x1="208.6" y1="189.6" x2="138.5" y2="120.9" class="hv-link"/>
+            <line x1="241.0" y1="170.5" x2="215.6" y2="77.5" class="hv-link"/>
+            <path d="M308.7 62.0 Q260 240 392.9 370.3" class="hv-arc"/>
+            <path d="M441.6 192.3 Q260 240 127.1 370.3" class="hv-arc"/>
+            <path d="M308.7 418.0 Q260 240 78.4 192.3" class="hv-arc"/>
+            <path d="M78.4 287.7 Q260 240 211.3 62.0" class="hv-arc"/>
+            <polygon points="260.0,144.0 343.1,192.0 343.1,288.0 260.0,336.0 176.9,288.0 176.9,192.0" class="hv-halo"/>
+            <polygon points="260.0,170.0 320.6,205.0 320.6,275.0 260.0,310.0 199.4,275.0 199.4,205.0" class="hv-core"/>
+            <polygon points="260.0,194.0 299.8,217.0 299.8,263.0 260.0,286.0 220.2,263.0 220.2,217.0" class="hv-core-inner"/>
+            <polygon points="308.7,48.0 320.8,55.0 320.8,69.0 308.7,76.0 296.5,69.0 296.5,55.0" class="hv-node hv-cyan"/>
+            <polygon points="392.9,95.7 405.1,102.7 405.1,116.7 392.9,123.7 380.8,116.7 380.8,102.7" class="hv-node hv-blue hv-pulse"/>
+            <polygon points="441.6,178.3 453.7,185.3 453.7,199.3 441.6,206.3 429.5,199.3 429.5,185.3" class="hv-node hv-gold"/>
+            <polygon points="441.6,273.7 453.7,280.7 453.7,294.7 441.6,301.7 429.5,294.7 429.5,280.7" class="hv-node hv-cyan"/>
+            <polygon points="392.9,356.3 405.1,363.3 405.1,377.3 392.9,384.3 380.8,377.3 380.8,363.3" class="hv-node hv-blue"/>
+            <polygon points="308.7,404.0 320.8,411.0 320.8,425.0 308.7,432.0 296.5,425.0 296.5,411.0" class="hv-node hv-gold hv-pulse"/>
+            <polygon points="211.3,404.0 223.5,411.0 223.5,425.0 211.3,432.0 199.2,425.0 199.2,411.0" class="hv-node hv-cyan"/>
+            <polygon points="127.1,356.3 139.2,363.3 139.2,377.3 127.1,384.3 114.9,377.3 114.9,363.3" class="hv-node hv-blue"/>
+            <polygon points="78.4,273.7 90.5,280.7 90.5,294.7 78.4,301.7 66.3,294.7 66.3,280.7" class="hv-node hv-gold"/>
+            <polygon points="78.4,178.3 90.5,185.3 90.5,199.3 78.4,206.3 66.3,199.3 66.3,185.3" class="hv-node hv-cyan hv-pulse"/>
+            <polygon points="127.1,95.7 139.2,102.7 139.2,116.7 127.1,123.7 114.9,116.7 114.9,102.7" class="hv-node hv-blue"/>
+            <polygon points="211.3,48.0 223.5,55.0 223.5,69.0 211.3,76.0 199.2,69.0 199.2,55.0" class="hv-node hv-gold"/>
+            <circle cx="308.7" cy="62.0" r="3" class="hv-dot"/>
+            <circle cx="392.9" cy="109.7" r="3" class="hv-dot"/>
+            <circle cx="441.6" cy="192.3" r="3" class="hv-dot"/>
+            <circle cx="441.6" cy="287.7" r="3" class="hv-dot"/>
+            <circle cx="392.9" cy="370.3" r="3" class="hv-dot"/>
+            <circle cx="308.7" cy="418.0" r="3" class="hv-dot"/>
+            <circle cx="211.3" cy="418.0" r="3" class="hv-dot"/>
+            <circle cx="127.1" cy="370.3" r="3" class="hv-dot"/>
+            <circle cx="78.4" cy="287.7" r="3" class="hv-dot"/>
+            <circle cx="78.4" cy="192.3" r="3" class="hv-dot"/>
+            <circle cx="127.1" cy="109.7" r="3" class="hv-dot"/>
+            <circle cx="211.3" cy="62.0" r="3" class="hv-dot"/>
           </svg>
         </div>
       </div>
@@ -812,6 +907,7 @@
         </div>
       </div>
     </section>
+
     <!-- §09 CONTACT & FINAL CALL TO ACTION -->
     <section class="section section-dark on-dark contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
@@ -830,19 +926,28 @@
           <ul class="contact-details">
             <li>
               <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#mail"/></svg>
-              <div><span class="detail-label">Email</span><a href="mailto:info@mtiaisolutions.com">info@mtiaisolutions.com</a></div>
+              <div><span class="detail-label">Email</span><a href="mailto:info@mtiaisolutions.com"><bdi>info@mtiaisolutions.com</bdi></a></div>
             </li>
             <li>
               <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#phone"/></svg>
-              <div><span class="detail-label">Phone / WhatsApp</span><a href="tel:+201055778871">+20 105 577 8871</a> <span aria-hidden="true">·</span> <a href="https://wa.me/201055778871" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+              <div><span class="detail-label">Phone / WhatsApp</span><a href="tel:+201055778871"><bdi>+20 105 577 8871</bdi></a> <span aria-hidden="true">·</span> <a href="https://wa.me/201055778871" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></div>
             </li>
-            <li>
+            <li class="contact-offices">
               <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#map-pin"/></svg>
-              <div><span class="detail-label">Egypt office</span><address>Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre, Cairo, Egypt.</address></div>
+              <div class="offices">
+                <div class="office">
+                  <span class="detail-label">Egypt office</span>
+                  <address><bdi>Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre, Cairo, Egypt.</bdi></address>
+                </div>
+                <div class="office">
+                  <span class="detail-label">Germany office</span>
+                  <address><bdi>MTI AI SOLUTIONS UG, Friedrichstraße 95, 10117 Berlin, Germany</bdi></address>
+                </div>
+              </div>
             </li>
             <li>
               <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#globe"/></svg>
-              <div><span class="detail-label">Website</span><a href="https://mtiaisolutions.com/">mtiaisolutions.com</a></div>
+              <div><span class="detail-label">Website</span><a href="https://mtiaisolutions.com/"><bdi>mtiaisolutions.com</bdi></a></div>
             </li>
             <li>
               <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#linkedin"/></svg>
@@ -881,7 +986,7 @@
               </div>
               <div class="field" data-field="business_email">
                 <label for="f-email">Business Email <span class="req" aria-hidden="true">*</span></label>
-                <input id="f-email" name="business_email" type="email" autocomplete="email" inputmode="email" required maxlength="190" spellcheck="false">
+                <input id="f-email" name="business_email" type="email" autocomplete="email" inputmode="email" required maxlength="190" spellcheck="false" dir="ltr">
                 <p class="field-error" id="f-email-error" hidden></p>
               </div>
               <div class="field" data-field="company">
@@ -891,7 +996,7 @@
               </div>
               <div class="field" data-field="phone">
                 <label for="f-phone">Phone Number</label>
-                <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" dir="ltr">
                 <p class="field-error" id="f-phone-error" hidden></p>
               </div>
               <div class="field" data-field="country">
@@ -970,13 +1075,13 @@
               <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#arrow-right"/></svg>
             </button>
             <p class="form-hint" id="form-hint" aria-live="polite"></p>
-            <noscript><p class="form-hint">This form needs JavaScript. You can also email <a href="mailto:info@mtiaisolutions.com">info@mtiaisolutions.com</a> or message us on WhatsApp at +20 105 577 8871.</p></noscript>
+            <noscript><p class="form-hint">This form needs JavaScript. You can also email <a href="mailto:info@mtiaisolutions.com"><bdi>info@mtiaisolutions.com</bdi></a> or message us on WhatsApp at <bdi>+20 105 577 8871</bdi>.</p></noscript>
           </form>
 
           <div class="form-success" id="form-success" tabindex="-1" hidden>
             <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#circle-check"/></svg>
             <h4>Thank you. We've received your enquiry.</h4>
-            <p class="success-ref" hidden>Your reference number is <strong id="success-ref"></strong>.</p>
+            <p class="success-ref" hidden>Your reference number is <strong id="success-ref" dir="ltr"></strong>.</p>
             <p>Our team will contact you shortly.</p>
           </div>
         </div>
@@ -988,8 +1093,19 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <img src="/assets/img/logo-reversed.svg" width="160" height="57" alt="MTI AI SOLUTIONS" loading="lazy">
-        <p class="footer-tagline">WHERE INDUSTRY MEETS INTELLIGENCE</p>
+        <p class="footer-tagline" lang="en">WHERE INDUSTRY MEETS INTELLIGENCE</p>
         <p class="footer-line">Engineering custom AI and software solutions for businesses across industries.</p>
+        <h2 class="footer-title footer-offices-title">Offices</h2>
+        <div class="footer-offices">
+          <div class="office">
+            <span class="detail-label">Egypt office</span>
+            <address><bdi>Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre, Cairo, Egypt.</bdi></address>
+          </div>
+          <div class="office">
+            <span class="detail-label">Germany office</span>
+            <address><bdi>MTI AI SOLUTIONS UG, Friedrichstraße 95, 10117 Berlin, Germany</bdi></address>
+          </div>
+        </div>
       </div>
       <nav class="footer-col" aria-labelledby="ft-company">
         <h2 class="footer-title" id="ft-company">Company</h2>

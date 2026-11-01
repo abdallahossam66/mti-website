@@ -79,38 +79,53 @@ export function sanitizeLead(input) {
   return lead;
 }
 
-/** Returns {} when valid, otherwise { field: [message] } in the CRM's 422 shape. Expects sanitized input. */
-export function validateLead(lead) {
-  const errors = {};
-  const fail = (field, message) => { (errors[field] ||= []).push(message); };
-  const text = (field, label, { required = false } = {}) => {
+// English messages; the proxy always uses these. Pages in other languages pass their own table to validateLead().
+export const MESSAGES_EN = {
+  name: { required: 'Please enter your full name.', invalid: 'Please enter a valid full name.', tooLong: 'Your full name must be {max} characters or fewer.' },
+  business_email: { required: 'Please enter your business email.', invalid: 'Please enter a valid email address, for example name@company.com.', tooLong: 'Your business email must be {max} characters or fewer.' },
+  company: { required: 'Please enter your company name.', invalid: 'Please enter a valid company name.', tooLong: 'Your company name must be {max} characters or fewer.' },
+  phone: { invalid: 'Please enter a valid phone number, using digits and optionally + ( ) - .', tooLong: 'Your phone number must be {max} characters or fewer.' },
+  country: { invalid: 'Please choose a country from the list.' },
+  industry: { invalid: 'Please choose an industry from the list.' },
+  interested_services: { invalid: 'Please choose services from the list.' },
+  timeline: { invalid: 'Please choose a project timeline from the list.' },
+  message: { invalid: 'Please enter a valid message.', tooLong: 'Your message must be {max} characters or fewer.' },
+  consent: { required: 'Please confirm that we may use your information to respond to your enquiry.' },
+};
+
+/** Returns {} when valid, otherwise { field: code } with code 'required' | 'invalid' | 'tooLong'. Expects sanitized input. */
+export function checkLead(lead) {
+  const codes = {};
+  const text = (field, required = false) => {
     const value = lead[field];
-    if (value === undefined) { if (required) fail(field, `Please enter your ${label}.`); return false; }
-    if (typeof value !== 'string') { fail(field, `Please enter a valid ${label}.`); return false; }
-    if (value.length > LIMITS[field]) { fail(field, `Your ${label} must be ${LIMITS[field]} characters or fewer.`); return false; }
+    if (value === undefined) { if (required) codes[field] = 'required'; return false; }
+    if (typeof value !== 'string') { codes[field] = 'invalid'; return false; }
+    if (value.length > LIMITS[field]) { codes[field] = 'tooLong'; return false; }
     return true;
   };
 
-  text('name', 'full name', { required: true });
-  if (text('business_email', 'business email', { required: true }) && !EMAIL.test(lead.business_email)) {
-    fail('business_email', 'Please enter a valid email address, for example name@company.com.');
-  }
-  text('company', 'company name', { required: true });
-  if (text('phone', 'phone number') && (!PHONE.test(lead.phone) || lead.phone.replace(/\D/g, '').length < 6)) {
-    fail('phone', 'Please enter a valid phone number, using digits and optionally + ( ) - .');
-  }
-  if (lead.country !== undefined && !(typeof lead.country === 'string' && COUNTRY_CODES.has(lead.country))) {
-    fail('country', 'Please choose a country from the list.');
-  }
-  if (lead.industry !== undefined && !INDUSTRIES.includes(lead.industry)) fail('industry', 'Please choose an industry from the list.');
+  text('name', true);
+  if (text('business_email', true) && !EMAIL.test(lead.business_email)) codes.business_email = 'invalid';
+  text('company', true);
+  if (text('phone') && (!PHONE.test(lead.phone) || lead.phone.replace(/\D/g, '').length < 6)) codes.phone = 'invalid';
+  if (lead.country !== undefined && !(typeof lead.country === 'string' && COUNTRY_CODES.has(lead.country))) codes.country = 'invalid';
+  if (lead.industry !== undefined && !INDUSTRIES.includes(lead.industry)) codes.industry = 'invalid';
   if (lead.interested_services !== undefined) {
     const list = lead.interested_services;
-    if (!Array.isArray(list) || !list.length || !list.every((s) => SERVICES.includes(s))) {
-      fail('interested_services', 'Please choose services from the list.');
-    }
+    if (!Array.isArray(list) || !list.length || !list.every((s) => SERVICES.includes(s))) codes.interested_services = 'invalid';
   }
-  if (lead.timeline !== undefined && !TIMELINES.includes(lead.timeline)) fail('timeline', 'Please choose a project timeline from the list.');
-  text('message', 'message');
-  if (lead.consent !== true) fail('consent', 'Please confirm that we may use your information to respond to your enquiry.');
+  if (lead.timeline !== undefined && !TIMELINES.includes(lead.timeline)) codes.timeline = 'invalid';
+  text('message');
+  if (lead.consent !== true) codes.consent = 'required';
+  return codes;
+}
+
+/** Returns {} when valid, otherwise { field: [message] } in the CRM's 422 shape. Expects sanitized input. */
+export function validateLead(lead, messages = MESSAGES_EN) {
+  const errors = {};
+  for (const [field, code] of Object.entries(checkLead(lead))) {
+    const template = messages[field]?.[code] ?? MESSAGES_EN[field][code];
+    errors[field] = [template.replace('{max}', String(LIMITS[field]))];
+  }
   return errors;
 }

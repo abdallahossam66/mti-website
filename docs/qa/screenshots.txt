@@ -1,4 +1,8 @@
 $ node scripts/screenshots.mjs
 
-docs/screenshots/1440: full-page + 10 sections
-docs/screenshots/390: full-page + 10 sections
+docs/screenshots/1440: full page + 10 sections + form states
+docs/screenshots/390: full page + 10 sections + form states
+docs/screenshots/de/1440: full page + 10 sections + form states
+docs/screenshots/de/390: full page + 10 sections + form states
+docs/screenshots/ar/1440: full page + 10 sections + form states
+docs/screenshots/ar/390: full page + 10 sections + form states

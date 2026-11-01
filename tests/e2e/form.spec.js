@@ -1,5 +1,6 @@
 // Contact form behaviour in the browser: validation, states, CTA wiring, rate limit, honeypot.
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { MOCK_CRM } from '../../playwright.config.js';
 
 async function fillValid(page, name = 'Mona Adel') {
@@ -131,3 +132,57 @@ test('mobile menu opens, closes on Escape and returns focus', async ({ page }, i
   await page.locator('#site-nav a[href="#faq"]').click();
   await expect(page.locator('#site-nav')).toBeHidden();
 });
+
+/* ---------- Translated pages: labels and messages follow the page, CRM values stay English ---------- */
+for (const lang of ['de', 'ar']) {
+  const t = JSON.parse(readFileSync(new URL(`../../src/i18n/${lang}.json`, import.meta.url), 'utf8'));
+
+  test.describe(`${lang.toUpperCase()} form`, () => {
+    test.beforeEach(async ({ page }) => { await page.goto(`/${lang}/#contact`); });
+
+    test('validation messages and the error summary are translated', async ({ page }) => {
+      await page.click('.btn-submit');
+      await expect(page.locator('#error-summary')).toBeFocused();
+      await expect(page.locator('#error-summary h4')).toContainText(t.form.summaryTitle);
+      await expect(page.locator('#f-name-error')).toHaveText(t.messages.fields.name.required);
+      await expect(page.locator('#f-consent-error')).toHaveText(t.messages.fields.consent.required);
+      await page.fill('#f-email', 'mona@');
+      await page.locator('#f-email').blur();
+      await expect(page.locator('#f-email-error')).toHaveText(t.messages.fields.business_email.invalid);
+    });
+
+    test('country names are shown in the page language; values stay ISO codes', async ({ page }) => {
+      const egypt = page.locator('#f-country option[value="EG"]');
+      await expect(egypt).toHaveText(lang === 'de' ? 'Ägypten' : 'مصر');
+      await expect(page.locator('#f-country option[value="DE"]')).toHaveText(lang === 'de' ? 'Deutschland' : 'ألمانيا');
+    });
+
+    test('CRM 422 errors are shown in the page language', async ({ page }) => {
+      await page.fill('#f-name', 'Mona [422]');
+      await page.fill('#f-email', 'mona@example.com');
+      await page.fill('#f-company', 'Acme');
+      await page.check('#f-consent');
+      await page.click('.btn-submit');
+      await expect(page.locator('#f-email-error')).toHaveText(t.messages.fields.business_email.invalid);
+    });
+
+    test('server error and rate-limit messages are translated', async ({ page }) => {
+      await page.fill('#f-name', 'Mona [500]');
+      await page.fill('#f-email', 'mona@example.com');
+      await page.fill('#f-company', 'Acme');
+      await page.check('#f-consent');
+      await page.click('.btn-submit');
+      const alert = page.locator('#form-alert');
+      await expect(alert).toContainText(t.messages.generic.split('{email}')[0].trim());
+      await expect(alert.locator('a[href="mailto:info@mtiaisolutions.com"]')).toBeVisible();
+      await expect(alert.locator('a[href="https://wa.me/201055778871"]')).toBeVisible();
+      await page.click('.btn-submit');
+      await expect(page.locator('#form-hint')).toHaveText(lang === 'de' ? /^Bitte warten Sie \d+ Sekunden?, bevor Sie erneut senden\.$/ : /^يرجى الانتظار .+ قبل الإرسال مرة أخرى\.$/);
+    });
+
+    test('booking placeholder note is translated', async ({ page }) => {
+      await page.click('#book-consultation');
+      await expect(page.locator('#booking-note')).toHaveText(t.contact.bookingNote);
+    });
+  });
+}

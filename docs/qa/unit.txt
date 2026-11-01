@@ -4,34 +4,44 @@ $ npm test
 > mti-website@1.0.0 test
 > node --test "tests/unit/*.test.mjs"
 
-✔ adds X-Website-Secret from the environment and forwards to {CRM_URL}/api/website/leads (161.537ms)
-✔ strips unknown fields (budget, honeypot key, nested utm extras) before forwarding (2.5408ms)
-✔ forwards CRM 422 with field errors (unknown keys dropped) (3.5359ms)
-✔ forwards CRM 429 with Retry-After (3.9817ms)
-✔ maps CRM 404 (wrong secret) to a generic 502 and logs an error without the secret (24.0592ms)
-✔ maps CRM 5xx, network errors and timeouts to 502 (5.6603ms)
-✔ honeypot: returns 201 and never calls the CRM (1.1445ms)
-✔ server-side validation returns 422 in the CRM shape without calling the CRM (8.3102ms)
-✔ rejects bad requests: method, content type, size, JSON, origin (60.3256ms)
-✔ accepts a Fetch API Headers object (Netlify runtime) (2.5419ms)
-✔ missing configuration returns 500 and logs only variable names (1.7796ms)
-✔ logger redacts the secret even if a message contains it (1.419ms)
-✔ never logs lead personal data (2.3107ms)
-✔ approved lists match the brief exactly (17.4253ms)
-✔ a minimal valid lead passes (1.43ms)
-✔ required fields and consent are enforced (14.391ms)
-✔ email format and length limits (6.029ms)
-✔ phone accepts common formats only (3.0283ms)
-✔ enumerated fields accept only approved values (3.3249ms)
-✔ sanitize drops unknown keys, empties and duplicates, and caps attribution fields (5.5861ms)
+✔ de.json has the same structure as en.json, no empty strings, and keeps every {token} (40.2652ms)
+✔ de.json keeps the company name in English wherever en.json uses it (2.2656ms)
+✔ de.json is marked as a machine draft pending MTI review (0.9846ms)
+✔ ar.json has the same structure as en.json, no empty strings, and keeps every {token} (5.6971ms)
+✔ ar.json keeps the company name in English wherever en.json uses it (1.8137ms)
+✔ ar.json is marked as a machine draft pending MTI review (1.3722ms)
+✔ no excluded or unverifiable terms in any language (budget, case studies, guarantees, certifications) (12.2489ms)
+✔ en.json is the approved brief copy (matches the verified fixture) (1.4345ms)
+✔ en.json field messages are identical to the proxy messages (MESSAGES_EN) (0.7737ms)
+✔ checkLead returns codes; validateLead localizes them with the page messages (10.4492ms)
+✔ adds X-Website-Secret from the environment and forwards to {CRM_URL}/api/website/leads (148.8795ms)
+✔ strips unknown fields (budget, honeypot key, nested utm extras) before forwarding (2.1702ms)
+✔ forwards CRM 422 with field errors (unknown keys dropped) (2.356ms)
+✔ forwards CRM 429 with Retry-After (3.2418ms)
+✔ maps CRM 404 (wrong secret) to a generic 502 and logs an error without the secret (2.6627ms)
+✔ maps CRM 5xx, network errors and timeouts to 502 (8.4866ms)
+✔ honeypot: returns 201 and never calls the CRM (2.7283ms)
+✔ server-side validation returns 422 in the CRM shape without calling the CRM (9.4769ms)
+✔ rejects bad requests: method, content type, size, JSON, origin (14.3894ms)
+✔ accepts a Fetch API Headers object (Netlify runtime) (4.1153ms)
+✔ missing configuration returns 500 and logs only variable names (1.1651ms)
+✔ logger redacts the secret even if a message contains it (0.7865ms)
+✔ never logs lead personal data (2.7192ms)
+✔ approved lists match the brief exactly (11.137ms)
+✔ a minimal valid lead passes (1.607ms)
+✔ required fields and consent are enforced (1.2148ms)
+✔ email format and length limits (1.0809ms)
+✔ phone accepts common formats only (1.189ms)
+✔ enumerated fields accept only approved values (1.3456ms)
+✔ sanitize drops unknown keys, empties and duplicates, and caps attribution fields (0.8429ms)
 [contact] lead forwarded ref=WL-NET-1
-✔ Netlify Function is mounted at /api/contact and forwards through the proxy core (164.1503ms)
-✔ Netlify Function rejects GET with 405 (4.71ms)
-ℹ tests 22
+✔ Netlify Function is mounted at /api/contact and forwards through the proxy core (111.4221ms)
+✔ Netlify Function rejects GET with 405 (2.8236ms)
+ℹ tests 32
 ℹ suites 0
-ℹ pass 22
+ℹ pass 32
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1147.994
+ℹ duration_ms 623.7326

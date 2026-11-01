@@ -5,15 +5,16 @@ import { spawnSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const STEPS = [
+  ['build', 'Generated pages match src/ (template + en/de/ar JSON)', 'node scripts/build-site.mjs --check'],
   ['fixture', 'Approved-copy fixture matches the brief PDF', 'node scripts/verify-fixture.mjs'],
-  ['unit', 'Unit tests (lead rules, proxy, Netlify adapter)', 'npm test'],
+  ['unit', 'Unit tests (lead rules, proxy, Netlify adapter, translations)', 'npm test'],
   ['html', 'HTML validation (W3C Nu checker)', 'node scripts/validate-html.mjs'],
   ['links', 'Link and fragment check', 'node scripts/check-links.mjs'],
   ['contrast', 'Colour contrast (WCAG 2.1)', 'node scripts/contrast.mjs'],
-  ['e2e', 'Browser tests: content, form, mocked end-to-end submit, axe, keyboard', 'npx playwright test'],
+  ['e2e', 'Browser tests (EN/DE/AR x 1440/390): content, form, mocked end-to-end submit, axe, keyboard', 'npx playwright test'],
   ['php', 'PHP proxy smoke test', 'node tests/php-smoke.mjs'],
-  ['lighthouse', 'Lighthouse mobile + desktop', 'node scripts/lighthouse.mjs'],
-  ['screenshots', 'Screenshots 1440 + 390', 'node scripts/screenshots.mjs'],
+  ['lighthouse', 'Lighthouse mobile + desktop for /, /de/, /ar/', 'node scripts/lighthouse.mjs'],
+  ['screenshots', 'Screenshots EN/DE/AR at 1440 + 390', 'node scripts/screenshots.mjs'],
 ];
 
 mkdirSync('docs/qa', { recursive: true });

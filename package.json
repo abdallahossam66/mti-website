@@ -8,6 +8,8 @@
     "node": ">=20.12"
   },
   "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "build:check": "node scripts/build-site.mjs --check",
     "start": "node server/node-server.mjs",
     "test": "node --test \"tests/unit/*.test.mjs\"",
     "test:e2e": "playwright test",
@@ -18,7 +20,6 @@
     "lighthouse": "node scripts/lighthouse.mjs",
     "screenshots": "node scripts/screenshots.mjs",
     "qa": "node scripts/qa.mjs",
-    "build:pages": "node scripts/build-pages.mjs",
     "build:og": "node scripts/build-og-image.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "build:countries": "node scripts/gen-countries.mjs",

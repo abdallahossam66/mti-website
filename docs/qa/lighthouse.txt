@@ -1,6 +1,12 @@
 $ node scripts/lighthouse.mjs
 
-| Form factor | Performance | Accessibility | Best practices | SEO | FCP | LCP | TBT | CLS | Speed Index |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| mobile | 98 | 100 | 100 | 100 | 1.6 s | 2.3 s | 0 ms | 0 | 2.5 s |
-| desktop | 100 | 100 | 100 | 100 | 0.4 s | 0.5 s | 0 ms | 0 | 0.4 s |
+| Page | Form factor | Performance | Accessibility | Best practices | SEO | FCP | LCP | TBT | CLS | Speed Index |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| / | mobile | 96 | 100 | 100 | 100 | 1.8 s | 2.4 s | 10 ms | 0 | 2.7 s |
+| / | desktop | 100 | 100 | 100 | 100 | 0.4 s | 0.5 s | 0 ms | 0 | 1.1 s |
+| /de/ | mobile | 96 | 100 | 100 | 100 | 1.9 s | 2.4 s | 20 ms | 0 | 2.8 s |
+| /de/ | desktop | 100 | 100 | 100 | 100 | 0.4 s | 0.5 s | 0 ms | 0 | 0.6 s |
+| /ar/ | mobile | 95 | 100 | 100 | 100 | 1.7 s | 2.6 s | 60 ms | 0 | 2.7 s |
+| /ar/ | desktop | 100 | 100 | 100 | 100 | 0.4 s | 0.6 s | 0 ms | 0 | 0.7 s |
+/de/ mobile audits below 0.9: performance:first-contentful-paint
+/ar/ mobile audits below 0.9: performance:largest-contentful-paint

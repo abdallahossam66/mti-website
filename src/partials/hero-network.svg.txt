@@ -1,0 +1,55 @@
+<line x1="308.7" y1="62.0" x2="392.9" y2="109.7" class="hv-ring"/>
+<line x1="392.9" y1="109.7" x2="441.6" y2="192.3" class="hv-ring"/>
+<line x1="441.6" y1="192.3" x2="441.6" y2="287.7" class="hv-ring"/>
+<line x1="441.6" y1="287.7" x2="392.9" y2="370.3" class="hv-ring"/>
+<line x1="392.9" y1="370.3" x2="308.7" y2="418.0" class="hv-ring"/>
+<line x1="308.7" y1="418.0" x2="211.3" y2="418.0" class="hv-ring"/>
+<line x1="211.3" y1="418.0" x2="127.1" y2="370.3" class="hv-ring"/>
+<line x1="127.1" y1="370.3" x2="78.4" y2="287.7" class="hv-ring"/>
+<line x1="78.4" y1="287.7" x2="78.4" y2="192.3" class="hv-ring"/>
+<line x1="78.4" y1="192.3" x2="127.1" y2="109.7" class="hv-ring"/>
+<line x1="127.1" y1="109.7" x2="211.3" y2="62.0" class="hv-ring"/>
+<line x1="211.3" y1="62.0" x2="308.7" y2="62.0" class="hv-ring"/>
+<line x1="279.0" y1="170.5" x2="304.4" y2="77.5" class="hv-link"/>
+<line x1="311.4" y1="189.6" x2="381.5" y2="120.9" class="hv-link"/>
+<line x1="329.6" y1="221.7" x2="426.1" y2="196.4" class="hv-link"/>
+<line x1="329.6" y1="258.3" x2="426.1" y2="283.6" class="hv-link"/>
+<line x1="311.4" y1="290.4" x2="381.5" y2="359.1" class="hv-link"/>
+<line x1="279.0" y1="309.5" x2="304.4" y2="402.5" class="hv-link"/>
+<line x1="241.0" y1="309.5" x2="215.6" y2="402.5" class="hv-link"/>
+<line x1="208.6" y1="290.4" x2="138.5" y2="359.1" class="hv-link"/>
+<line x1="190.4" y1="258.3" x2="93.9" y2="283.6" class="hv-link"/>
+<line x1="190.4" y1="221.7" x2="93.9" y2="196.4" class="hv-link"/>
+<line x1="208.6" y1="189.6" x2="138.5" y2="120.9" class="hv-link"/>
+<line x1="241.0" y1="170.5" x2="215.6" y2="77.5" class="hv-link"/>
+<path d="M308.7 62.0 Q260 240 392.9 370.3" class="hv-arc"/>
+<path d="M441.6 192.3 Q260 240 127.1 370.3" class="hv-arc"/>
+<path d="M308.7 418.0 Q260 240 78.4 192.3" class="hv-arc"/>
+<path d="M78.4 287.7 Q260 240 211.3 62.0" class="hv-arc"/>
+<polygon points="260.0,144.0 343.1,192.0 343.1,288.0 260.0,336.0 176.9,288.0 176.9,192.0" class="hv-halo"/>
+<polygon points="260.0,170.0 320.6,205.0 320.6,275.0 260.0,310.0 199.4,275.0 199.4,205.0" class="hv-core"/>
+<polygon points="260.0,194.0 299.8,217.0 299.8,263.0 260.0,286.0 220.2,263.0 220.2,217.0" class="hv-core-inner"/>
+<polygon points="308.7,48.0 320.8,55.0 320.8,69.0 308.7,76.0 296.5,69.0 296.5,55.0" class="hv-node hv-cyan"/>
+<polygon points="392.9,95.7 405.1,102.7 405.1,116.7 392.9,123.7 380.8,116.7 380.8,102.7" class="hv-node hv-blue hv-pulse"/>
+<polygon points="441.6,178.3 453.7,185.3 453.7,199.3 441.6,206.3 429.5,199.3 429.5,185.3" class="hv-node hv-gold"/>
+<polygon points="441.6,273.7 453.7,280.7 453.7,294.7 441.6,301.7 429.5,294.7 429.5,280.7" class="hv-node hv-cyan"/>
+<polygon points="392.9,356.3 405.1,363.3 405.1,377.3 392.9,384.3 380.8,377.3 380.8,363.3" class="hv-node hv-blue"/>
+<polygon points="308.7,404.0 320.8,411.0 320.8,425.0 308.7,432.0 296.5,425.0 296.5,411.0" class="hv-node hv-gold hv-pulse"/>
+<polygon points="211.3,404.0 223.5,411.0 223.5,425.0 211.3,432.0 199.2,425.0 199.2,411.0" class="hv-node hv-cyan"/>
+<polygon points="127.1,356.3 139.2,363.3 139.2,377.3 127.1,384.3 114.9,377.3 114.9,363.3" class="hv-node hv-blue"/>
+<polygon points="78.4,273.7 90.5,280.7 90.5,294.7 78.4,301.7 66.3,294.7 66.3,280.7" class="hv-node hv-gold"/>
+<polygon points="78.4,178.3 90.5,185.3 90.5,199.3 78.4,206.3 66.3,199.3 66.3,185.3" class="hv-node hv-cyan hv-pulse"/>
+<polygon points="127.1,95.7 139.2,102.7 139.2,116.7 127.1,123.7 114.9,116.7 114.9,102.7" class="hv-node hv-blue"/>
+<polygon points="211.3,48.0 223.5,55.0 223.5,69.0 211.3,76.0 199.2,69.0 199.2,55.0" class="hv-node hv-gold"/>
+<circle cx="308.7" cy="62.0" r="3" class="hv-dot"/>
+<circle cx="392.9" cy="109.7" r="3" class="hv-dot"/>
+<circle cx="441.6" cy="192.3" r="3" class="hv-dot"/>
+<circle cx="441.6" cy="287.7" r="3" class="hv-dot"/>
+<circle cx="392.9" cy="370.3" r="3" class="hv-dot"/>
+<circle cx="308.7" cy="418.0" r="3" class="hv-dot"/>
+<circle cx="211.3" cy="418.0" r="3" class="hv-dot"/>
+<circle cx="127.1" cy="370.3" r="3" class="hv-dot"/>
+<circle cx="78.4" cy="287.7" r="3" class="hv-dot"/>
+<circle cx="78.4" cy="192.3" r="3" class="hv-dot"/>
+<circle cx="127.1" cy="109.7" r="3" class="hv-dot"/>
+<circle cx="211.3" cy="62.0" r="3" class="hv-dot"/>

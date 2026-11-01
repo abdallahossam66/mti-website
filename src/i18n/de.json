@@ -1,0 +1,243 @@
+{
+  "_meta": {
+    "lang": "de",
+    "dir": "ltr",
+    "locale": "de_DE",
+    "path": "/de/",
+    "status": "Machine draft — pending MTI review. Translated from en.json (approved English brief copy). Brand rule: company name and tagline stay in English."
+  },
+  "meta": {
+    "title": "MTI AI SOLUTIONS — KI, Automatisierung & individuelle Software für Unternehmen",
+    "description": "MTI AI SOLUTIONS entwickelt KI-Lösungen, individuelle Software und intelligente Automatisierung für effizientere Abläufe in Unternehmen aller Branchen.",
+    "ogTitle": "MTI AI SOLUTIONS — Unternehmen durch künstliche Intelligenz transformieren",
+    "ogDescription": "Intelligente KI-Lösungen, individuelle Software und fortschrittliche Automatisierungssysteme für Unternehmen aller Branchen."
+  },
+  "ui": {
+    "skip": "Zum Hauptinhalt springen",
+    "homeAlt": "MTI AI SOLUTIONS – Startseite",
+    "menu": "Menü",
+    "navLabel": "Hauptnavigation",
+    "languageLabel": "Sprache",
+    "nav": ["Lösungen", "Branchen", "Warum MTI", "Arbeitsweise", "Technologie", "FAQ"],
+    "newTab": "(öffnet in einem neuen Tab)"
+  },
+  "hero": {
+    "headline": "Unternehmen durch künstliche Intelligenz transformieren.",
+    "text": "Wir unterstützen Unternehmen aller Branchen mit intelligenten KI-Lösungen, individueller Software und fortschrittlichen Automatisierungssystemen — und machen aus komplexen Herausforderungen effizientere Abläufe, bessere Entscheidungen und messbares Geschäftswachstum.",
+    "ctaPrimary": "Projekt besprechen",
+    "ctaSecondary": "Unsere Lösungen entdecken"
+  },
+  "challenges": {
+    "eyebrow": "Herausforderungen im Unternehmen",
+    "headline": "Jedes Unternehmen steht vor Herausforderungen. Wir entwickeln die Intelligenz, um sie zu meistern.",
+    "text": "Unternehmen aller Branchen sind mit wachsender operativer Komplexität, nicht verbundenen Systemen, repetitiven Prozessen und steigenden Effizienzanforderungen konfrontiert. Wir helfen Organisationen, diese Herausforderungen mit intelligenter Technologie, KI-gestützten Lösungen und maßgeschneiderten Softwaresystemen zu bewältigen.",
+    "cards": [
+      ["Operative Ineffizienz", "Repetitive Aufgaben und manuelle Abläufe kosten wertvolle Zeit und Ressourcen."],
+      ["Nicht verbundene Systeme", "Fragmentierte Plattformen und isolierte Daten erschweren die Steuerung des Geschäftsbetriebs."],
+      ["Begrenzte Business Intelligence", "Fehlende verwertbare Erkenntnisse erschweren strategische Entscheidungen."],
+      ["Steigende Betriebskosten", "Ineffiziente Prozesse und Ressourcenverteilung erhöhen die Betriebsausgaben."],
+      ["Grenzen der Skalierbarkeit", "Bestehende Systeme stoßen bei Wachstum und steigenden Anforderungen an ihre Grenzen."],
+      ["Unzureichendes Kundenerlebnis", "Langsame Reaktionen und uneinheitliche Kommunikation beeinträchtigen die Kundenzufriedenheit."]
+    ],
+    "closing": "Die Herausforderung ist nicht nur die Technologie. Entscheidend ist, dass Technologie für Ihr Unternehmen funktioniert."
+  },
+  "solutions": {
+    "eyebrow": "Unsere Lösungen",
+    "headline": "Intelligente Lösungen, ausgerichtet auf Ihr Unternehmen.",
+    "text": "Von intelligenter Automatisierung über KI-Systeme für Unternehmen bis zur individuellen Softwareentwicklung: Wir konzipieren und entwickeln Technologielösungen, die echte geschäftliche Herausforderungen lösen, Abläufe optimieren und neue Wachstumschancen eröffnen.",
+    "highlightsLabel": "Schwerpunkte",
+    "explore": "Lösung ansehen",
+    "categories": [
+      { "name": "KI-Lösungen & intelligente Automatisierung", "description": "Automatisieren Sie repetitive Prozesse, extrahieren Sie Daten aus Dokumenten und unterstützen Sie alltägliche Entscheidungen mit KI, die in Ihre Abläufe integriert ist.", "highlights": ["Automatisierung von Geschäftsprozessen", "Intelligente Workflow-Automatisierung", "KI-gestützter Betrieb"] },
+      { "name": "KI-Agenten & virtuelle Assistenten", "description": "Individuelle KI-Agenten und Assistenten, die Ihren Vertrieb, Ihren Kundenservice und Ihre internen Teams unterstützen.", "highlights": ["Individuelle KI-Agenten", "KI-Assistenten für das Business", "KI-Vertriebsassistenten"] },
+      { "name": "Individuelle Softwareentwicklung", "description": "Geschäftsanwendungen, CRM- und ERP-Systeme sowie Webplattformen, entwickelt nach der Arbeitsweise Ihrer Organisation.", "highlights": ["Individuelle Geschäftsanwendungen", "CRM- & ERP-Systeme", "Plattformen für Unternehmensmanagement"] },
+      { "name": "Enterprise-KI & Wissenssysteme", "description": "Private KI-Systeme, die die Dokumente und das Wissen Ihrer Organisation durchsuchen, Inhalte abrufen und Antworten liefern.", "highlights": ["RAG-basierte KI-Systeme", "Wissensdatenbanken für Unternehmen", "Intelligente Dokumentensuche"] },
+      { "name": "Conversational AI & Sprachlösungen", "description": "Sprachagenten, Chatbots und WhatsApp-Automatisierung, die Kundengespräche über Kanäle und Sprachen hinweg abwickeln.", "highlights": ["KI-Sprachagenten", "WhatsApp-KI-Automatisierung", "Intelligente Chatbots"] },
+      { "name": "Datenintelligenz & Business Analytics", "description": "Machen Sie aus Geschäftsdaten Dashboards, Berichte und prädiktive Erkenntnisse, die bessere Entscheidungen unterstützen.", "highlights": ["Business-Intelligence-Dashboards", "Predictive Analytics", "Datenintegration"] },
+      { "name": "Digitale Transformation & Systemintegration", "description": "Modernisieren Sie Altsysteme, verbinden Sie Unternehmensplattformen und überführen Sie Abläufe in digitale und cloudbasierte Prozesse.", "highlights": ["Beratung zur digitalen Transformation", "Modernisierung von Altsystemen", "Integration von Unternehmenssystemen"] },
+      { "name": "Cybersicherheit & Informationssicherheit", "description": "Bewerten, überwachen und stärken Sie die Sicherheit Ihrer Systeme, Daten und KI-Anwendungen.", "highlights": ["Cybersecurity-Assessment & Beratung", "Sicherheitsüberwachung & Bedrohungserkennung", "Schwachstellenanalyse"] }
+    ],
+    "closing": "Technologie sollte sich an Ihr Unternehmen anpassen. Nicht umgekehrt.",
+    "cta": "Unsere Kompetenzen entdecken"
+  },
+  "industries": {
+    "eyebrow": "Branchen",
+    "headline": "Ein Technologiepartner. Viele Branchen. Unbegrenzte Möglichkeiten.",
+    "text": "Jede Branche hat eigene Herausforderungen, betriebliche Anforderungen und Innovationspotenziale. MTI AI SOLUTIONS liefert maßgeschneiderte KI- und Softwarelösungen, die auf die spezifischen Bedürfnisse von Unternehmen unterschiedlichster Sektoren zugeschnitten sind.",
+    "focusLabel": "Schwerpunkte",
+    "cards": [
+      ["Fertigung & Industrie", "Intelligente Betriebsabläufe", "Vorausschauende Wartung"],
+      ["Gesundheitswesen", "Automatisierung im Gesundheitswesen", "Patientenerlebnis"],
+      ["Immobilien & Bauwesen", "Immobilienverwaltung", "Intelligente Betriebsabläufe"],
+      ["Banken & Finanzdienstleistungen", "Finanzautomatisierung", "Datenintelligenz"],
+      ["Handel & E-Commerce", "Kundenerlebnis", "Vertriebsautomatisierung"],
+      ["Bildung", "Lernsysteme", "Verwaltungsautomatisierung"],
+      ["Logistik & Transport", "Flottenintelligenz", "Workflow-Optimierung"],
+      ["Gastgewerbe & Tourismus", "Gästeerlebnis", "Buchungsautomatisierung"],
+      ["Energie & Versorgung", "Energieintelligenz", "Betriebsoptimierung"],
+      ["Telekommunikation", "Kundenautomatisierung", "Netzwerkintelligenz"],
+      ["Professionelle Dienstleistungen", "Workflow-Automatisierung", "Wissenssysteme"],
+      ["Behörden & öffentlicher Sektor", "Digitale Transformation", "Intelligente Dienste"]
+    ],
+    "closing": "Unterschiedliche Branchen. Unterschiedliche Herausforderungen. Ein intelligenter Ansatz.",
+    "cta": "Branchenlösungen entdecken"
+  },
+  "why": {
+    "eyebrow": "Warum MTI AI SOLUTIONS?",
+    "headline": "Wir entwickeln nicht nur Technologie. Wir schaffen Wettbewerbsvorteile für Ihr Unternehmen.",
+    "text": "Bei MTI AI SOLUTIONS sind wir überzeugt, dass Technologie messbaren geschäftlichen Mehrwert liefern muss. Wir verbinden künstliche Intelligenz, Softwareentwicklung und Geschäftsverständnis, um Lösungen zu entwickeln, die reale betriebliche Herausforderungen adressieren und langfristiges Wachstum unterstützen.",
+    "cards": [
+      ["Geschäftsorientierter Ansatz", "Wir verstehen zunächst Ihre Geschäftsziele, Herausforderungen und betrieblichen Anforderungen, bevor wir die passende Lösung entwickeln."],
+      ["Maßgeschneiderte Lösungen", "Jedes Unternehmen ist anders. Wir entwickeln individuelle KI- und Softwarelösungen, die auf Ihre spezifischen Anforderungen abgestimmt sind."],
+      ["Praxisnahe KI-Umsetzung", "Wir setzen auf KI-Lösungen, die in realen Geschäftsumgebungen funktionieren – nicht nur auf experimentelle Konzepte."],
+      ["Alles aus einer Hand", "Von der Beratung und dem Systemdesign über Entwicklung, Integration und Bereitstellung bis hin zum laufenden Support."],
+      ["Skalierbare Technologie", "Wir entwickeln Lösungen, die sich mit Ihrem Unternehmen weiterentwickeln und künftiges Wachstum ermöglichen."],
+      ["Sicherheit & Zuverlässigkeit", "Wir legen Wert auf sichere Architektur, verantwortungsvollen Technologieeinsatz und zuverlässige Systemleistung."]
+    ],
+    "philosophyLabel": "Unsere Arbeitsphilosophie",
+    "philosophyTitle": "Von geschäftlichen Herausforderungen zu intelligenten Lösungen.",
+    "philosophy": [
+      ["Verstehen", "Ihr Unternehmen verstehen."],
+      ["Planen", "Den richtigen technologischen Ansatz festlegen."],
+      ["Umsetzen", "Die Lösung entwickeln und integrieren."],
+      ["Weiterentwickeln", "Kontinuierlich optimieren und skalieren."]
+    ],
+    "closing": "Ihr Unternehmen hat eigene Herausforderungen. Ihre Technologie sollte eine eigene Strategie haben.",
+    "cta": "Sprechen wir über Ihr Unternehmen"
+  },
+  "process": {
+    "eyebrow": "Unsere Arbeitsweise",
+    "headline": "Ein klarer Prozess. Intelligente Umsetzung. Messbare Ergebnisse.",
+    "text": "Jede erfolgreiche Lösung beginnt mit einem klaren Verständnis des Unternehmens. Unser strukturiertes Vorgehen stellt sicher, dass jedes Projekt sorgfältig analysiert, strategisch geplant, professionell umgesetzt und kontinuierlich optimiert wird.",
+    "journeyLabel": "Projektverlauf",
+    "journey": ["Erkundung", "Analyse", "Konzeption", "Entwicklung", "Bereitstellung", "Optimierung"],
+    "stagePrefix": "Phase",
+    "stages": [
+      ["Erstgespräch & Beratung", "Wir lernen Ihr Unternehmen kennen, identifizieren betriebliche Herausforderungen und erkunden, wo KI und Technologie Mehrwert schaffen können."],
+      ["Geschäftsanalyse", "Wir analysieren Ihre Anforderungen, bestehenden Systeme, Abläufe und technische Umgebung, um die passende Lösung zu definieren."],
+      ["Strategie & Lösungsdesign", "Wir entwickeln eine maßgeschneiderte technische Strategie, definieren den Projektumfang und legen Meilensteine für die Umsetzung fest."],
+      ["Engineering & Entwicklung", "Unser Entwicklungsprozess setzt das freigegebene Design in funktionsfähige KI-Systeme, Softwareanwendungen und intelligente Automatisierungslösungen um."],
+      ["Test & Bereitstellung", "Wir prüfen Funktionalität, Leistung, Sicherheit und Integration, bevor wir die Lösung in Ihrer Geschäftsumgebung bereitstellen."],
+      ["Support & kontinuierliche Optimierung", "Wir bieten laufenden technischen Support, Wartung, Verbesserungen und Optimierung, während sich Ihr Unternehmen weiterentwickelt."]
+    ],
+    "closing": "Ihre Vision. Unsere Entwicklung. Ein intelligentes Ergebnis.",
+    "cta": "Projekt starten"
+  },
+  "technology": {
+    "eyebrow": "Technologie & Innovation",
+    "headline": "Angetrieben von fortschrittlicher Technologie. Entwickelt für die Praxis.",
+    "text": "Wir nutzen moderne Technologien, fortschrittliche KI-Frameworks und skalierbare Softwarearchitekturen, um intelligente Lösungen zu entwickeln, die sich nahtlos in Geschäftsumgebungen integrieren und nachhaltigen Mehrwert schaffen.",
+    "cards": [
+      { "name": "Künstliche Intelligenz & Machine Learning", "items": ["Machine Learning", "Deep Learning", "Prädiktive KI", "Intelligente Entscheidungssysteme", "Computer Vision"] },
+      { "name": "Generative KI & Large Language Models", "items": ["Large Language Models (LLMs)", "Generative KI-Anwendungen", "Retrieval-Augmented Generation (RAG)", "KI-Wissenssysteme", "KI-gestützte Inhaltsverarbeitung"] },
+      { "name": "KI-Agenten & Automatisierung", "items": ["Autonome KI-Agenten", "Multi-Agenten-Architekturen", "Intelligente Workflow-Automatisierung", "Agentische KI-Systeme", "Automatisierung von Geschäftsprozessen"] },
+      { "name": "Sprach- & Dialog-KI", "items": ["Spracherkennung", "Text-to-Speech", "KI-Sprachagenten", "Verarbeitung natürlicher Sprache (NLP)", "Mehrsprachige Dialogsysteme"] },
+      { "name": "Software- & Anwendungsentwicklung", "items": ["Individuelle Webanwendungen", "Backend- & API-Entwicklung", "Frontend-Entwicklung", "Unternehmenssoftware", "Mobile Anwendungen"] },
+      { "name": "Cloud & Infrastruktur", "items": ["Cloud-Architektur", "Datenbank-Engineering", "Cloud-Bereitstellung", "Skalierbare Infrastruktur", "Systemüberwachung"] },
+      { "name": "Data Engineering & Business Intelligence", "items": ["Datenintegration", "Datenverarbeitung", "Business Intelligence", "Predictive Analytics", "Interaktive Dashboards"] },
+      { "name": "Cybersicherheit & Informationssicherheit", "items": ["Sicherheitsarchitektur", "Schwachstellenanalyse", "Identitäts- & Zugriffsmanagement", "Datenschutz", "Sicherheitsüberwachung"] }
+    ],
+    "closing": "Wir jagen keinen Technologietrends hinterher. Wir entwickeln Technologie, die Mehrwert schafft.",
+    "cta": "Unsere Kompetenzen entdecken"
+  },
+  "faq": {
+    "eyebrow": "Häufige Fragen",
+    "headline": "Alles, was Sie vor dem Start wissen müssen.",
+    "text": "Haben Sie Fragen zu KI, Softwareentwicklung oder der Zusammenarbeit mit MTI AI SOLUTIONS? Hier finden Sie Antworten auf einige der häufigsten Fragen.",
+    "items": [
+      ["Welche Leistungen bietet MTI AI SOLUTIONS an?", "Wir bieten KI-Lösungen, intelligente Automatisierung, individuelle Softwareentwicklung, KI-Systeme für Unternehmen, Conversational AI, Datenintelligenz, digitale Transformation und Lösungen für Cybersicherheit."],
+      ["Mit welchen Branchen arbeiten Sie?", "Wir arbeiten mit Unternehmen aus zahlreichen Branchen, darunter Gesundheitswesen, Fertigung, Finanzwesen, Handel, Immobilien, Bildung, Logistik und professionelle Dienstleistungen."],
+      ["Können Sie individuelle Lösungen für unser Unternehmen entwickeln?", "Ja. Wir konzipieren und entwickeln maßgeschneiderte Lösungen auf Basis Ihrer Geschäftsziele, betrieblichen Anforderungen und technischen Umgebung."],
+      ["Arbeiten Sie auch mit kleinen und mittleren Unternehmen?", "Ja. Unsere Lösungen lassen sich auf Unternehmen unterschiedlicher Größe zuschneiden – von wachsenden Start-ups und KMU bis hin zu etablierten Großunternehmen."],
+      ["Wie lange dauert ein typisches Projekt?", "Die Projektdauer hängt von Komplexität, Umfang und technischen Anforderungen ab. Einen voraussichtlichen Zeitplan legen wir im Erstgespräch und in der Planungsphase fest."],
+      ["Bieten Sie laufenden Support und Wartung an?", "Ja. Wir können laufenden technischen Support, Wartung, Monitoring und Optimierung im Rahmen des vereinbarten Leistungsumfangs anbieten."],
+      ["Wie beginnen wir die Zusammenarbeit mit MTI AI SOLUTIONS?", "Kontaktieren Sie einfach unser Team oder fordern Sie eine Beratung an. Wir besprechen Ihre Anforderungen, verstehen Ihre Ziele und ermitteln die passende Lösung."]
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "headline": "Bereit, Ihr Unternehmen zu transformieren?",
+    "text": "Ob Sie Abläufe automatisieren, KI-Lösungen einführen, individuelle Software entwickeln oder Ihre digitale Transformation beschleunigen möchten – unser Team ist bereit, Ihre Vision zu verstehen und gemeinsam mit Ihnen Wirklichkeit werden zu lassen.",
+    "ctaPrimary": "Projekt besprechen",
+    "ctaBook": "Beratungstermin vereinbaren",
+    "bookingNote": "Die Online-Terminbuchung ist bald verfügbar. Senden Sie uns Ihre Angaben, und unser Team vereinbart einen Termin mit Ihnen.",
+    "detailsTitle": "Kontaktdaten",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon / WhatsApp",
+    "whatsapp": "WhatsApp",
+    "egyptOffice": "Büro Ägypten",
+    "germanyOffice": "Büro Deutschland",
+    "websiteLabel": "Website",
+    "linkedinLabel": "LinkedIn",
+    "linkedinText": "MTI AI SOLUTIONS auf LinkedIn"
+  },
+  "form": {
+    "title": "Projekt besprechen",
+    "intro": "Pflichtfelder sind mit einem Sternchen ({req}) gekennzeichnet.",
+    "summaryTitle": "Bitte korrigieren Sie Folgendes:",
+    "honeypotLabel": "Firmenwebsite (leer lassen)",
+    "name": "Vollständiger Name",
+    "email": "Geschäftliche E-Mail-Adresse",
+    "company": "Unternehmen",
+    "phone": "Telefonnummer",
+    "country": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "industry": "Branche",
+    "industryPlaceholder": "Branche auswählen",
+    "services": "Gewünschte Leistung",
+    "servicesHint": "(Mehrfachauswahl möglich)",
+    "timeline": "Projektzeitraum",
+    "timelinePlaceholder": "Zeitraum auswählen",
+    "timelines": ["So bald wie möglich", "Innerhalb von 3 Monaten", "3–6 Monate", "6–12 Monate", "Noch nicht entschieden"],
+    "message": "Erzählen Sie uns von Ihrem Projekt",
+    "charCount": "{count} / 4000 Zeichen",
+    "consent": "Ich bin damit einverstanden, dass MTI AI SOLUTIONS meine Angaben zur Beantwortung meiner Anfrage verwendet, wie in der {privacy} beschrieben.",
+    "privacyLink": "Datenschutzerklärung",
+    "submit": "Nachricht senden",
+    "noscript": "Dieses Formular benötigt JavaScript. Sie erreichen uns auch per E-Mail an {email} oder per WhatsApp unter {phone}.",
+    "successTitle": "Vielen Dank. Wir haben Ihre Anfrage erhalten.",
+    "successRef": "Ihre Referenznummer lautet {ref}.",
+    "successNext": "Unser Team meldet sich in Kürze bei Ihnen."
+  },
+  "messages": {
+    "fields": {
+      "name": { "required": "Bitte geben Sie Ihren vollständigen Namen ein.", "invalid": "Bitte geben Sie einen gültigen Namen ein.", "tooLong": "Ihr Name darf höchstens {max} Zeichen lang sein." },
+      "business_email": { "required": "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein.", "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein, zum Beispiel name@firma.de.", "tooLong": "Ihre E-Mail-Adresse darf höchstens {max} Zeichen lang sein." },
+      "company": { "required": "Bitte geben Sie den Namen Ihres Unternehmens ein.", "invalid": "Bitte geben Sie einen gültigen Unternehmensnamen ein.", "tooLong": "Der Unternehmensname darf höchstens {max} Zeichen lang sein." },
+      "phone": { "invalid": "Bitte geben Sie eine gültige Telefonnummer ein (Ziffern und optional + ( ) - .).", "tooLong": "Die Telefonnummer darf höchstens {max} Zeichen lang sein." },
+      "country": { "invalid": "Bitte wählen Sie ein Land aus der Liste." },
+      "industry": { "invalid": "Bitte wählen Sie eine Branche aus der Liste." },
+      "interested_services": { "invalid": "Bitte wählen Sie Leistungen aus der Liste." },
+      "timeline": { "invalid": "Bitte wählen Sie einen Projektzeitraum aus der Liste." },
+      "message": { "invalid": "Bitte geben Sie eine gültige Nachricht ein.", "tooLong": "Ihre Nachricht darf höchstens {max} Zeichen lang sein." },
+      "consent": { "required": "Bitte bestätigen Sie, dass wir Ihre Angaben zur Beantwortung Ihrer Anfrage verwenden dürfen." }
+    },
+    "checkFields": "Bitte prüfen Sie die markierten Felder.",
+    "rateLimited": "Wir haben mehrere Anfragen von Ihrer Verbindung erhalten. Bitte versuchen Sie es in einigen Minuten erneut.",
+    "generic": "Ihre Nachricht konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail an {email} oder per WhatsApp unter {whatsapp}.",
+    "waitSeconds": { "one": "Bitte warten Sie {n} Sekunde, bevor Sie erneut senden.", "other": "Bitte warten Sie {n} Sekunden, bevor Sie erneut senden." },
+    "tryMinutes": { "one": "Sie haben in kurzer Zeit mehrere Anfragen gesendet. Bitte versuchen Sie es in {n} Minute erneut.", "other": "Sie haben in kurzer Zeit mehrere Anfragen gesendet. Bitte versuchen Sie es in {n} Minuten erneut." },
+    "sending": "Wird gesendet…",
+    "submit": "Nachricht senden",
+    "newTab": "(öffnet in einem neuen Tab)"
+  },
+  "footer": {
+    "company": "Unternehmen",
+    "solutions": "Lösungen",
+    "industries": "Branchen",
+    "connect": "Kontakt",
+    "legal": "Rechtliches",
+    "offices": "Standorte",
+    "about": "Über uns",
+    "approach": "Unser Ansatz",
+    "contactUs": "Kontaktieren Sie uns",
+    "linkedin": "LinkedIn",
+    "email": "Offizielle E-Mail",
+    "whatsapp": "WhatsApp",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "cookies": "Cookie-Richtlinie",
+    "brandLine": "Individuelle KI- und Softwarelösungen für Unternehmen aller Branchen.",
+    "copyright": "Copyright © 2026 MTI AI SOLUTIONS. Alle Rechte vorbehalten."
+  }
+}

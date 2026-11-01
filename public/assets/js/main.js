@@ -4,7 +4,7 @@ import { BOOKING_URL, track } from './site-config.js';
 const header = document.querySelector('.site-header');
 const nav = document.getElementById('site-nav');
 const toggle = document.querySelector('.nav-toggle');
-const mobileNav = window.matchMedia('(max-width: 1099.98px)');
+const mobileNav = window.matchMedia('(max-width: 1279.98px)'); // keep in sync with main.css
 
 /* ---------- Mobile navigation ---------- */
 function setNavOpen(open, { returnFocus = false } = {}) {
@@ -88,7 +88,9 @@ if (book && BOOKING_URL) {
   a.rel = 'noopener';
   a.dataset.track = 'cta';
   a.innerHTML = book.innerHTML;
-  a.insertAdjacentHTML('beforeend', '<span class="visually-hidden"> (opens in a new tab)</span>');
+  let newTab = '(opens in a new tab)';
+  try { newTab = JSON.parse(document.getElementById('i18n').textContent).messages.newTab || newTab; } catch { /* English fallback */ }
+  a.append(Object.assign(document.createElement('span'), { className: 'visually-hidden', textContent: ` ${newTab}` }));
   book.replaceWith(a);
 } else if (book) {
   book.addEventListener('click', () => {

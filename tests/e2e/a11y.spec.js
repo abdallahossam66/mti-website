@@ -5,25 +5,28 @@ import { expect, test } from '@playwright/test';
 const axe = (page) => new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
 const summarize = (violations) => violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`);
 
-test('home page has no axe violations', async ({ page }) => {
-  await page.goto('/');
-  expect(summarize((await axe(page)).violations)).toEqual([]);
-});
+for (const path of ['/', '/de/', '/ar/']) {
+  test(`${path} has no axe violations`, async ({ page }) => {
+    await page.goto(path);
+    expect(summarize((await axe(page)).violations)).toEqual([]);
+  });
 
-test('no axe violations with FAQ open and form errors shown', async ({ page }) => {
-  await page.goto('/');
-  for (const btn of await page.locator('.acc-trigger').all()) await btn.click();
-  await page.click('.btn-submit');
-  await expect(page.locator('#error-summary')).toBeVisible();
-  expect(summarize((await axe(page)).violations)).toEqual([]);
-});
+  test(`${path} has no axe violations with FAQ open and form errors shown`, async ({ page }) => {
+    await page.goto(path);
+    for (const btn of await page.locator('.acc-trigger').all()) await btn.click();
+    await page.click('.btn-submit');
+    await expect(page.locator('#error-summary')).toBeVisible();
+    expect(summarize((await axe(page)).violations)).toEqual([]);
+  });
 
-test('no axe violations with the mobile menu open', async ({ page }, info) => {
-  test.skip(info.project.name !== 'mobile-390', 'mobile only');
-  await page.goto('/');
-  await page.click('.nav-toggle');
-  expect(summarize((await axe(page)).violations)).toEqual([]);
-});
+  test(`${path} has no axe violations with the mobile menu open`, async ({ page }, info) => {
+    test.skip(info.project.name !== 'mobile-390', 'mobile only');
+    await page.goto(path);
+    await page.click('.nav-toggle');
+    await expect(page.locator('.lang-switch')).toBeVisible();
+    expect(summarize((await axe(page)).violations)).toEqual([]);
+  });
+}
 
 test('placeholder and 404 pages have no axe violations', async ({ page }) => {
   for (const path of ['/privacy.html', '/terms.html', '/cookies.html', '/404.html']) {
