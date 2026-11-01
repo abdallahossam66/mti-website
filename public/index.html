@@ -31,6 +31,7 @@
   <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/main.css">
   <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/form.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -811,6 +812,247 @@
         </div>
       </div>
     </section>
+    <!-- §09 CONTACT & FINAL CALL TO ACTION -->
+    <section class="section section-dark on-dark contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-intro">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title" id="contact-title">Ready to Transform Your Business?</h2>
+          <p class="section-lead">Whether you're looking to automate operations, implement AI solutions, develop custom software, or accelerate your digital transformation, our team is ready to understand your vision and help turn it into reality.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="#contact-form" data-track="cta" data-focus="#f-name">Discuss Your Project
+              <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#arrow-right"/></svg></a>
+            <button class="btn btn-outline-dark" type="button" id="book-consultation" data-track="cta">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#calendar"/></svg>Book a Consultation</button>
+          </div>
+
+          <h3 class="contact-details-title">Contact details</h3>
+          <ul class="contact-details">
+            <li>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#mail"/></svg>
+              <div><span class="detail-label">Email</span><a href="mailto:info@mtiaisolutions.com">info@mtiaisolutions.com</a></div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#phone"/></svg>
+              <div><span class="detail-label">Phone / WhatsApp</span><a href="tel:+201055778871">+20 105 577 8871</a> <span aria-hidden="true">·</span> <a href="https://wa.me/201055778871" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#map-pin"/></svg>
+              <div><span class="detail-label">Egypt office</span><address>Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre, Cairo, Egypt.</address></div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#globe"/></svg>
+              <div><span class="detail-label">Website</span><a href="https://mtiaisolutions.com/">mtiaisolutions.com</a></div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#linkedin"/></svg>
+              <div><span class="detail-label">LinkedIn</span><a href="https://www.linkedin.com/company/mti-solutions-g/" target="_blank" rel="noopener">MTI AI SOLUTIONS on LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card" id="contact-form">
+          <h3 class="form-title" id="form-title">Discuss Your Project</h3>
+          <p class="form-intro">Required fields are marked with an asterisk (<span class="req">*</span>).</p>
+          <p class="booking-note" id="booking-note" tabindex="-1" hidden>
+            <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#info"/></svg>
+            <span>Online booking will be available soon. Send us your details and our team will arrange a meeting time.</span>
+          </p>
+
+          <div class="error-summary" id="error-summary" tabindex="-1" hidden>
+            <h4>
+              <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#circle-alert"/></svg>
+              Please correct the following:</h4>
+            <ul></ul>
+          </div>
+          <div class="form-alert" id="form-alert" role="alert"></div>
+
+          <form id="lead-form" class="lead-form" novalidate aria-labelledby="form-title">
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-website">Company website (leave empty)</label>
+              <input id="f-website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field" data-field="name">
+                <label for="f-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+                <p class="field-error" id="f-name-error" hidden></p>
+              </div>
+              <div class="field" data-field="business_email">
+                <label for="f-email">Business Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-email" name="business_email" type="email" autocomplete="email" inputmode="email" required maxlength="190" spellcheck="false">
+                <p class="field-error" id="f-email-error" hidden></p>
+              </div>
+              <div class="field" data-field="company">
+                <label for="f-company">Company Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-company" name="company" type="text" autocomplete="organization" required maxlength="160">
+                <p class="field-error" id="f-company-error" hidden></p>
+              </div>
+              <div class="field" data-field="phone">
+                <label for="f-phone">Phone Number</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+                <p class="field-error" id="f-phone-error" hidden></p>
+              </div>
+              <div class="field" data-field="country">
+                <label for="f-country">Country</label>
+                <select id="f-country" name="country" autocomplete="country">
+                  <option value="">Select country</option>
+                </select>
+                <p class="field-error" id="f-country-error" hidden></p>
+              </div>
+              <div class="field" data-field="industry">
+                <label for="f-industry">Industry</label>
+                <select id="f-industry" name="industry">
+                  <option value="">Select industry</option>
+                  <option>Manufacturing &amp; Industrial</option>
+                  <option>Healthcare</option>
+                  <option>Real Estate &amp; Construction</option>
+                  <option>Banking &amp; Financial Services</option>
+                  <option>Retail &amp; E-commerce</option>
+                  <option>Education</option>
+                  <option>Logistics &amp; Transportation</option>
+                  <option>Hospitality &amp; Tourism</option>
+                  <option>Energy &amp; Utilities</option>
+                  <option>Telecommunications</option>
+                  <option>Professional Services</option>
+                  <option>Government &amp; Public Sector</option>
+                </select>
+                <p class="field-error" id="f-industry-error" hidden></p>
+              </div>
+            </div>
+
+            <fieldset class="field field-group" id="f-services" data-field="interested_services">
+              <legend>Interested Service <span class="hint">(select all that apply)</span></legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="interested_services" value="AI Solutions &amp; Intelligent Automation"><span>AI Solutions &amp; Intelligent Automation</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="AI Agents &amp; Virtual Assistants"><span>AI Agents &amp; Virtual Assistants</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Custom Software Development"><span>Custom Software Development</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Enterprise AI &amp; Knowledge Systems"><span>Enterprise AI &amp; Knowledge Systems</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Conversational AI &amp; Voice Solutions"><span>Conversational AI &amp; Voice Solutions</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Data Intelligence &amp; Business Analytics"><span>Data Intelligence &amp; Business Analytics</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Digital Transformation &amp; System Integration"><span>Digital Transformation &amp; System Integration</span></label>
+                <label class="check"><input type="checkbox" name="interested_services" value="Cybersecurity &amp; Information Security"><span>Cybersecurity &amp; Information Security</span></label>
+              </div>
+              <p class="field-error" id="f-services-error" hidden></p>
+            </fieldset>
+
+            <div class="field" data-field="timeline">
+              <label for="f-timeline">Project Timeline</label>
+              <select id="f-timeline" name="timeline">
+                <option value="">Select timeline</option>
+                <option>As soon as possible</option>
+                <option>Within 3 months</option>
+                <option>3–6 months</option>
+                <option>6–12 months</option>
+                <option>Not decided yet</option>
+              </select>
+              <p class="field-error" id="f-timeline-error" hidden></p>
+            </div>
+
+            <div class="field" data-field="message">
+              <label for="f-message">Tell Us About Your Project</label>
+              <textarea id="f-message" name="message" rows="5" maxlength="4000" aria-describedby="f-message-count"></textarea>
+              <p class="char-count" id="f-message-count"><span>0</span> / 4000 characters</p>
+              <p class="field-error" id="f-message-error" hidden></p>
+            </div>
+
+            <div class="field field-consent" data-field="consent">
+              <label class="check">
+                <input type="checkbox" id="f-consent" name="consent" required>
+                <span>I agree that MTI AI SOLUTIONS may use the information I've provided to respond to my enquiry, as described in the <a href="/privacy.html">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></span>
+              </label>
+              <p class="field-error" id="f-consent-error" hidden></p>
+            </div>
+
+            <button class="btn btn-primary btn-submit" type="submit">
+              <span class="btn-label">Send Message</span>
+              <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#arrow-right"/></svg>
+            </button>
+            <p class="form-hint" id="form-hint" aria-live="polite"></p>
+            <noscript><p class="form-hint">This form needs JavaScript. You can also email <a href="mailto:info@mtiaisolutions.com">info@mtiaisolutions.com</a> or message us on WhatsApp at +20 105 577 8871.</p></noscript>
+          </form>
+
+          <div class="form-success" id="form-success" tabindex="-1" hidden>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="/assets/img/icons.svg#circle-check"/></svg>
+            <h4>Thank you. We've received your enquiry.</h4>
+            <p class="success-ref" hidden>Your reference number is <strong id="success-ref"></strong>.</p>
+            <p>Our team will contact you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer on-dark">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-reversed.svg" width="160" height="57" alt="MTI AI SOLUTIONS" loading="lazy">
+        <p class="footer-tagline">WHERE INDUSTRY MEETS INTELLIGENCE</p>
+        <p class="footer-line">Engineering custom AI and software solutions for businesses across industries.</p>
+      </div>
+      <nav class="footer-col" aria-labelledby="ft-company">
+        <h2 class="footer-title" id="ft-company">Company</h2>
+        <ul>
+          <li><a href="#why-mti">About Us</a></li>
+          <li><a href="#how-we-work">Our Approach</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="ft-solutions">
+        <h2 class="footer-title" id="ft-solutions">Solutions</h2>
+        <ul>
+          <li><a href="#solution-ai-automation">AI Solutions &amp; Intelligent Automation</a></li>
+          <li><a href="#solution-ai-agents">AI Agents &amp; Virtual Assistants</a></li>
+          <li><a href="#solution-custom-software">Custom Software Development</a></li>
+          <li><a href="#solution-enterprise-ai">Enterprise AI &amp; Knowledge Systems</a></li>
+          <li><a href="#solution-conversational-ai">Conversational AI &amp; Voice Solutions</a></li>
+          <li><a href="#solution-data-analytics">Data Intelligence &amp; Business Analytics</a></li>
+          <li><a href="#solution-digital-transformation">Digital Transformation &amp; System Integration</a></li>
+          <li><a href="#solution-cybersecurity">Cybersecurity &amp; Information Security</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="ft-industries">
+        <h2 class="footer-title" id="ft-industries">Industries</h2>
+        <ul class="footer-industries">
+          <li><a href="#industry-manufacturing">Manufacturing &amp; Industrial</a></li>
+          <li><a href="#industry-healthcare">Healthcare</a></li>
+          <li><a href="#industry-real-estate">Real Estate &amp; Construction</a></li>
+          <li><a href="#industry-banking">Banking &amp; Financial Services</a></li>
+          <li><a href="#industry-retail">Retail &amp; E-commerce</a></li>
+          <li><a href="#industry-education">Education</a></li>
+          <li><a href="#industry-logistics">Logistics &amp; Transportation</a></li>
+          <li><a href="#industry-hospitality">Hospitality &amp; Tourism</a></li>
+          <li><a href="#industry-energy">Energy &amp; Utilities</a></li>
+          <li><a href="#industry-telecommunications">Telecommunications</a></li>
+          <li><a href="#industry-professional-services">Professional Services</a></li>
+          <li><a href="#industry-government">Government &amp; Public Sector</a></li>
+        </ul>
+      </nav>
+      <div class="footer-side">
+        <nav class="footer-col" aria-labelledby="ft-connect">
+          <h2 class="footer-title" id="ft-connect">Connect</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/mti-solutions-g/" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="mailto:info@mtiaisolutions.com">Official Email</a></li>
+            <li><a href="https://wa.me/201055778871" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-labelledby="ft-legal">
+          <h2 class="footer-title" id="ft-legal">Legal</h2>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="/cookies.html">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>Copyright © 2026 MTI AI SOLUTIONS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,28 @@
+$ node scripts/contrast.mjs
+
+| Foreground | Background | Ratio | Required | Result | Usage |
+| --- | --- | --- | --- | --- | --- |
+| #0D1B3E | #FFFFFF | 16.89:1 | 4.5:1 | Pass | Navy headings/text on white |
+| #0D1B3E | #F4F6FB | 15.62:1 | 4.5:1 | Pass | Navy headings/text on off-white |
+| #3A4468 | #FFFFFF | 9.52:1 | 4.5:1 | Pass | Secondary text on white |
+| #3A4468 | #F4F6FB | 8.80:1 | 4.5:1 | Pass | Secondary text on off-white (focus tags, timeline) |
+| #1E6FD9 | #FFFFFF | 4.85:1 | 4.5:1 | Pass | Blue links on white cards ("Explore Solution", Privacy Policy) |
+| #FFFFFF | #1E6FD9 | 4.85:1 | 4.5:1 | Pass | White text on primary buttons |
+| #FFFFFF | #185BB3 | 6.59:1 | 4.5:1 | Pass | White text on primary button hover |
+| #FFFFFF | #0D1B3E | 16.89:1 | 4.5:1 | Pass | White text on navy |
+| #C9D2E6 | #0D1B3E | 11.13:1 | 4.5:1 | Pass | Muted text on navy |
+| #C9D2E6 | #0A1632 | 11.80:1 | 4.5:1 | Pass | Muted footer text |
+| #C8922A | #0D1B3E | 6.11:1 | 4.5:1 | Pass | Gold tagline, eyebrows, stage numbers on navy |
+| #00C8FF | #0D1B3E | 8.61:1 | 3:1 | Pass | Cyan icons/underlines on navy (non-text) |
+| #00C8FF | #0D1B3E | 8.61:1 | 4.5:1 | Pass | Cyan link hover text on navy |
+| #B42318 | #FFFFFF | 6.57:1 | 4.5:1 | Pass | Error text on white |
+| #B42318 | #FEF2F2 | 6.01:1 | 4.5:1 | Pass | Error text on error background |
+| #065F46 | #ECFDF5 | 7.29:1 | 4.5:1 | Pass | Success text |
+| #075985 | #F0F9FF | 7.09:1 | 4.5:1 | Pass | Booking note text |
+| #92400E | #FFFBEB | 6.84:1 | 4.5:1 | Pass | Placeholder-page note |
+| #6E7891 | #FFFFFF | 4.41:1 | 3:1 | Pass | Form field borders (non-text, WCAG 1.4.11) |
+| #1E6FD9 | #FFFFFF | 4.85:1 | 3:1 | Pass | Focus ring on white |
+| #1E6FD9 | #F4F6FB | 4.48:1 | 3:1 | Pass | Focus ring on off-white |
+| #00C8FF | #0D1B3E | 8.61:1 | 3:1 | Pass | Focus ring on navy |
+
+22/22 pairs pass

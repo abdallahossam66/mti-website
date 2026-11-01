@@ -1,0 +1,11 @@
+$ node scripts/check-links.mjs
+
+Internal links/assets checked: 13, broken: 0
+Fragment links checked: 172, broken: 0
+External links: 6
+  SKIPPED 0    mailto:info@mtiaisolutions.com
+  SKIPPED 0    tel:+201055778871
+  OK      200  https://www.linkedin.com/company/mti-solutions-g/
+  OK      200  https://wa.me/201055778871
+  BROKEN  404  https://mtiaisolutions.com/assets/img/og-image.png
+  OK      200  https://mtiaisolutions.com/

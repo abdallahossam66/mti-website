@@ -5,11 +5,11 @@
   "description": "Public website of MTI AI SOLUTIONS",
   "type": "module",
   "engines": {
-    "node": ">=20.6"
+    "node": ">=20.12"
   },
   "scripts": {
-    "start": "node --env-file-if-exists=.env server/node-server.mjs",
-    "test": "node --test tests/unit/",
+    "start": "node server/node-server.mjs",
+    "test": "node --test \"tests/unit/*.test.mjs\"",
     "test:e2e": "playwright test",
     "test:php": "node tests/php-smoke.mjs",
     "validate:html": "node scripts/validate-html.mjs",
@@ -17,7 +17,12 @@
     "contrast": "node scripts/contrast.mjs",
     "lighthouse": "node scripts/lighthouse.mjs",
     "screenshots": "node scripts/screenshots.mjs",
-    "qa": "node scripts/qa.mjs"
+    "qa": "node scripts/qa.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "build:og": "node scripts/build-og-image.mjs",
+    "build:icons": "node scripts/build-icons.mjs",
+    "build:countries": "node scripts/gen-countries.mjs",
+    "verify:fixture": "node scripts/verify-fixture.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

@@ -1,5 +1,5 @@
-// Page behaviour: mobile navigation, CTA focus handling and analytics events.
-import { track } from './site-config.js';
+// Page behaviour: mobile navigation, scroll-spy, FAQ accordion, CTA focus handling and analytics events.
+import { BOOKING_URL, track } from './site-config.js';
 
 const header = document.querySelector('.site-header');
 const nav = document.getElementById('site-nav');
@@ -65,6 +65,37 @@ document.addEventListener('click', (e) => {
   const link = e.target.closest('a[data-focus]');
   if (link) setTimeout(() => focusTarget(link.dataset.focus), 0);
 
+  // "Explore Solution" pre-ticks that service in the contact form.
+  const service = e.target.closest('[data-service]')?.dataset.service;
+  if (service) {
+    const box = [...document.querySelectorAll('input[name="interested_services"]')].find((i) => i.value === service);
+    if (box) box.checked = true;
+  }
+
   const cta = e.target.closest('[data-track="cta"]');
   if (cta) track('cta_click', { label: cta.textContent.trim().replace(/\s+/g, ' '), target: cta.getAttribute('href') || '' });
 });
+
+/* ---------- "Book a Consultation" ---------- */
+// Until MTI supplies a booking URL (site-config.js), the button opens the contact form with a short note.
+// No calendar widget or availability is shown (brief §09).
+const book = document.getElementById('book-consultation');
+if (book && BOOKING_URL) {
+  const a = document.createElement('a');
+  a.className = book.className;
+  a.href = BOOKING_URL;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.dataset.track = 'cta';
+  a.innerHTML = book.innerHTML;
+  a.insertAdjacentHTML('beforeend', '<span class="visually-hidden"> (opens in a new tab)</span>');
+  book.replaceWith(a);
+} else if (book) {
+  book.addEventListener('click', () => {
+    document.getElementById('booking-note').hidden = false;
+    const formCard = document.getElementById('contact-form');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    formCard.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    document.getElementById('booking-note').focus({ preventScroll: true });
+  });
+}

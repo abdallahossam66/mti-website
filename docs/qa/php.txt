@@ -1,0 +1,11 @@
+$ node tests/php-smoke.mjs
+
+ok   201: forwards with secret header, strips budget, returns reference
+ok   422 from CRM is passed through with known fields only
+ok   429 from CRM is passed through with Retry-After
+ok   5xx from CRM → 502
+ok   honeypot → 201 without forwarding
+ok   missing required fields → 422 without forwarding
+ok   bad requests: 405 / 415 / 400 / 403 / 413
+ok   404 (wrong secret) → generic 502, secret never logged or returned
+PHP smoke test passed (8 checks)

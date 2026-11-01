@@ -1,0 +1,3 @@
+$ node scripts/verify-fixture.mjs
+
+112/112 fixture strings found in the brief

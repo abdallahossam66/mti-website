@@ -1,0 +1,37 @@
+$ npm test
+
+
+> mti-website@1.0.0 test
+> node --test "tests/unit/*.test.mjs"
+
+✔ adds X-Website-Secret from the environment and forwards to {CRM_URL}/api/website/leads (161.537ms)
+✔ strips unknown fields (budget, honeypot key, nested utm extras) before forwarding (2.5408ms)
+✔ forwards CRM 422 with field errors (unknown keys dropped) (3.5359ms)
+✔ forwards CRM 429 with Retry-After (3.9817ms)
+✔ maps CRM 404 (wrong secret) to a generic 502 and logs an error without the secret (24.0592ms)
+✔ maps CRM 5xx, network errors and timeouts to 502 (5.6603ms)
+✔ honeypot: returns 201 and never calls the CRM (1.1445ms)
+✔ server-side validation returns 422 in the CRM shape without calling the CRM (8.3102ms)
+✔ rejects bad requests: method, content type, size, JSON, origin (60.3256ms)
+✔ accepts a Fetch API Headers object (Netlify runtime) (2.5419ms)
+✔ missing configuration returns 500 and logs only variable names (1.7796ms)
+✔ logger redacts the secret even if a message contains it (1.419ms)
+✔ never logs lead personal data (2.3107ms)
+✔ approved lists match the brief exactly (17.4253ms)
+✔ a minimal valid lead passes (1.43ms)
+✔ required fields and consent are enforced (14.391ms)
+✔ email format and length limits (6.029ms)
+✔ phone accepts common formats only (3.0283ms)
+✔ enumerated fields accept only approved values (3.3249ms)
+✔ sanitize drops unknown keys, empties and duplicates, and caps attribution fields (5.5861ms)
+[contact] lead forwarded ref=WL-NET-1
+✔ Netlify Function is mounted at /api/contact and forwards through the proxy core (164.1503ms)
+✔ Netlify Function rejects GET with 405 (4.71ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1147.994

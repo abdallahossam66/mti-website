@@ -1,0 +1,14 @@
+# Apache: copy to the document root next to index.html (see README "VPS option B: PHP").
+# Routes the form's POST /api/contact to the PHP proxy.
+RewriteEngine On
+RewriteRule ^api/contact$ api/contact.php [L]
+
+# Security headers (same as netlify.toml)
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+</IfModule>
+ErrorDocument 404 /404.html
