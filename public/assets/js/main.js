@@ -25,6 +25,32 @@ if (toggle && nav) {
   mobileNav.addEventListener('change', () => setNavOpen(false));
 }
 
+/* ---------- Scroll-spy: mark the nav link of the section in view ---------- */
+const navLinks = new Map(
+  [...document.querySelectorAll('.site-nav a[href^="#"]:not(.btn)')].map((a) => [a.getAttribute('href').slice(1), a]),
+);
+if ('IntersectionObserver' in window && navLinks.size) {
+  const spy = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      navLinks.forEach((a, id) => {
+        if (id === entry.target.id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    }
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main > section[id]').forEach((s) => spy.observe(s));
+}
+
+/* ---------- FAQ accordion (WAI-ARIA APG pattern) ---------- */
+// The markup ships expanded so answers are readable without JavaScript; collapse on start-up.
+document.querySelectorAll('.acc-trigger').forEach((btn) => {
+  btn.setAttribute('aria-expanded', 'false');
+  btn.addEventListener('click', () => {
+    btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+  });
+});
+
 /* ---------- CTA links: move focus to the target after the jump ---------- */
 // Links carry data-focus="<selector>"; the browser scrolls to the href, then focus moves for keyboard
 // and screen-reader users without a second scroll.
