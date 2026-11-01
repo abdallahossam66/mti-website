@@ -1,0 +1,155 @@
+{
+  "_note": "Approved copy transcribed from brief/Landing_Page_Master_Brief.pdf (Release 1.0). scripts/verify-fixture.mjs checks every string against the PDF text; tests/e2e/content.spec.js checks every string appears on the page.",
+  "company": "MTI AI SOLUTIONS",
+  "tagline": "WHERE INDUSTRY MEETS INTELLIGENCE",
+  "sectionOrder": ["home", "challenges", "solutions", "industries", "why-mti", "how-we-work", "technology", "faq", "contact"],
+  "hero": {
+    "headline": "Transforming Businesses Through Artificial Intelligence.",
+    "text": "We empower businesses across industries with intelligent AI solutions, custom software, and advanced automation systems — transforming complex challenges into smarter operations, better decisions, and measurable business growth.",
+    "ctas": ["Discuss Your Project", "Explore Our Solutions"]
+  },
+  "challenges": {
+    "headline": "Every Business Faces Challenges. We Engineer the Intelligence to Overcome Them.",
+    "text": "Across industries, businesses face increasing operational complexity, disconnected systems, repetitive processes, and growing demands for efficiency. We help organizations overcome these challenges through intelligent technology, AI-driven solutions, and tailored software systems.",
+    "cards": [
+      ["Operational Inefficiency", "Repetitive tasks and manual workflows consume valuable time and resources."],
+      ["Disconnected Systems", "Fragmented platforms and isolated data make business operations harder to manage."],
+      ["Limited Business Intelligence", "Lack of actionable insights makes strategic decision-making difficult."],
+      ["Rising Operational Costs", "Inefficient processes and resource allocation increase operating expenses."],
+      ["Scalability Challenges", "Existing systems struggle to support business growth and increasing demands."],
+      ["Poor Customer Experience", "Slow responses and disconnected communication affect customer satisfaction."]
+    ],
+    "closing": "The Challenge Isn't Just Technology. It's Making Technology Work for Your Business."
+  },
+  "solutions": {
+    "headline": "Intelligent Solutions Designed Around Your Business.",
+    "text": "From intelligent automation to enterprise AI systems and custom software development, we design and engineer technology solutions that solve real business challenges, streamline operations, and create opportunities for growth.",
+    "categories": [
+      { "name": "AI Solutions & Intelligent Automation", "capabilities": ["Business Process Automation", "Intelligent Workflow Automation", "AI-Powered Operations", "Document Processing & Data Extraction", "Intelligent Decision Support"] },
+      { "name": "AI Agents & Virtual Assistants", "capabilities": ["Custom AI Agents", "AI Business Assistants", "AI Sales Assistants", "Customer Support Agents", "Multi-Agent Systems"] },
+      { "name": "Custom Software Development", "capabilities": ["Custom Business Applications", "CRM & ERP Systems", "Enterprise Management Platforms", "Web Applications", "API Development & Integration"] },
+      { "name": "Enterprise AI & Knowledge Systems", "capabilities": ["RAG-Based AI Systems", "Enterprise Knowledge Bases", "Intelligent Document Search", "Internal AI Knowledge Assistants", "Private AI Solutions"] },
+      { "name": "Conversational AI & Voice Solutions", "capabilities": ["AI Voice Agents", "WhatsApp AI Automation", "Intelligent Chatbots", "Multilingual AI Assistants", "Automated Call Handling"] },
+      { "name": "Data Intelligence & Business Analytics", "capabilities": ["Business Intelligence Dashboards", "Predictive Analytics", "Data Integration", "Performance Monitoring", "AI-Powered Reporting"] },
+      { "name": "Digital Transformation & System Integration", "capabilities": ["Digital Transformation Consulting", "Legacy System Modernization", "Enterprise System Integration", "Cloud-Based Solutions", "Digital Workflow Transformation"] },
+      { "name": "Cybersecurity & Information Security", "capabilities": ["Cybersecurity Assessment & Consulting", "Security Monitoring & Threat Detection", "Vulnerability Assessment", "Identity & Access Management", "Data Protection & Security Automation", "AI Security & Governance"] }
+    ],
+    "closing": "Technology Should Adapt to Your Business. Not the Other Way Around.",
+    "cta": "Explore Our Capabilities"
+  },
+  "solutionDescriptionsPendingApproval": [
+    "Automate repetitive processes, extract data from documents, and support everyday decisions with AI built into your operations.",
+    "Custom AI agents and assistants that support your sales, customer support, and internal business teams.",
+    "Business applications, CRM and ERP systems, and web platforms engineered around the way your organization works.",
+    "Private AI systems that search, retrieve, and answer from your organization's own documents and knowledge.",
+    "Voice agents, chatbots, and WhatsApp automation that handle customer conversations across channels and languages.",
+    "Turn business data into dashboards, reports, and predictive insights that support better decisions.",
+    "Modernize legacy systems, connect enterprise platforms, and move workflows to digital and cloud-based operations.",
+    "Assess, monitor, and strengthen the security of your systems, data, and AI applications."
+  ],
+  "industries": {
+    "headline": "One Technology Partner. Multiple Industries. Unlimited Possibilities.",
+    "text": "Every industry has unique challenges, operational demands, and opportunities for innovation. MTI AI SOLUTIONS delivers tailored AI and software solutions designed to meet the specific needs of businesses across diverse sectors.",
+    "cards": [
+      ["Manufacturing & Industrial", "Smart operations", "predictive maintenance"],
+      ["Healthcare", "Healthcare automation", "patient experience"],
+      ["Real Estate & Construction", "Property management", "smart operations"],
+      ["Banking & Financial Services", "Financial automation", "data intelligence"],
+      ["Retail & E-commerce", "Customer experience", "sales automation"],
+      ["Education", "Learning systems", "administrative automation"],
+      ["Logistics & Transportation", "Fleet intelligence", "workflow optimization"],
+      ["Hospitality & Tourism", "Guest experience", "booking automation"],
+      ["Energy & Utilities", "Energy intelligence", "operational optimization"],
+      ["Telecommunications", "Customer automation", "network intelligence"],
+      ["Professional Services", "Workflow automation", "knowledge systems"],
+      ["Government & Public Sector", "Digital transformation", "intelligent services"]
+    ],
+    "closing": "Different Industries. Different Challenges. One Intelligent Approach.",
+    "cta": "Explore Industry Solutions"
+  },
+  "why": {
+    "headline": "We Don't Just Build Technology. We Engineer Business Advantages.",
+    "text": "At MTI AI SOLUTIONS, we believe technology should deliver measurable business value. We combine artificial intelligence, software engineering, and business understanding to develop solutions that address real operational challenges and support long-term growth.",
+    "cards": [
+      ["Business-First Approach", "We start by understanding your business objectives, challenges, and operational requirements before engineering the right solution."],
+      ["Tailored Solutions", "Every business is different. We develop customized AI and software solutions aligned with your specific needs."],
+      ["Practical AI Implementation", "We focus on deploying AI solutions that work in real business environments, not just experimental concepts."],
+      ["End-to-End Capabilities", "From consulting and system design to development, integration, deployment, and ongoing support."],
+      ["Scalable Technology", "We engineer solutions designed to evolve alongside your business and accommodate future growth."],
+      ["Security & Reliability", "We prioritize secure architecture, responsible technology implementation, and reliable system performance."]
+    ],
+    "philosophyLabel": "Our working philosophy",
+    "philosophyTitle": "From Business Challenges to Intelligent Solutions.",
+    "philosophy": [
+      ["01", "Understand", "Understand your business."],
+      ["02", "Strategize", "Define the right technology approach."],
+      ["03", "Engineer", "Build and integrate the solution."],
+      ["04", "Evolve", "Optimize and scale continuously."]
+    ],
+    "closing": "Your Business Has Its Own Challenges. Your Technology Should Have Its Own Strategy.",
+    "cta": "Let's Discuss Your Business"
+  },
+  "process": {
+    "headline": "A Clear Process. Intelligent Execution. Measurable Results.",
+    "text": "Every successful solution starts with a clear understanding of the business. Our structured approach ensures that every project is carefully analyzed, strategically planned, professionally engineered, and continuously optimized.",
+    "stages": [
+      ["01", "Discovery & Consultation", "Discovery", "We understand your business, identify operational challenges, and explore opportunities where AI and technology can create value."],
+      ["02", "Business Analysis", "Analysis", "We assess your requirements, existing systems, workflows, and technical environment to define the right solution."],
+      ["03", "Strategy & Solution Design", "Design", "We develop a tailored technical strategy, define the project scope, and establish implementation milestones."],
+      ["04", "Engineering & Development", "Development", "Our engineering process transforms the approved design into functional AI systems, software applications, and intelligent automation solutions."],
+      ["05", "Testing & Deployment", "Deployment", "We validate functionality, performance, security, and integration before deploying the solution into your business environment."],
+      ["06", "Support & Continuous Optimization", "Optimization", "We provide ongoing technical support, maintenance, improvements, and optimization as your business evolves."]
+    ],
+    "closing": "Your Vision. Our Engineering. One Intelligent Outcome.",
+    "cta": "Start Your Project"
+  },
+  "technology": {
+    "headline": "Powered by Advanced Technology. Designed for Real-World Business.",
+    "text": "We leverage modern technologies, advanced AI frameworks, and scalable software architectures to engineer intelligent solutions that integrate seamlessly into business environments and deliver lasting value.",
+    "cards": [
+      { "name": "Artificial Intelligence & Machine Learning", "items": ["Machine Learning", "Deep Learning", "Predictive AI", "Intelligent Decision Systems", "Computer Vision"] },
+      { "name": "Generative AI & Large Language Models", "items": ["Large Language Models (LLMs)", "Generative AI Applications", "Retrieval-Augmented Generation (RAG)", "AI Knowledge Systems", "AI-Powered Content Processing"] },
+      { "name": "AI Agents & Automation", "items": ["Autonomous AI Agents", "Multi-Agent Architectures", "Intelligent Workflow Automation", "Agentic AI Systems", "Business Process Automation"] },
+      { "name": "Voice & Conversational AI", "items": ["Speech Recognition", "Text-to-Speech", "Voice AI Agents", "Natural Language Processing", "Multilingual Conversational Systems"] },
+      { "name": "Software & Application Engineering", "items": ["Custom Web Applications", "Backend & API Development", "Frontend Engineering", "Enterprise Software", "Mobile Applications"] },
+      { "name": "Cloud & Infrastructure", "items": ["Cloud Architecture", "Database Engineering", "Cloud Deployment", "Scalable Infrastructure", "System Monitoring"] },
+      { "name": "Data Engineering & Business Intelligence", "items": ["Data Integration", "Data Processing", "Business Intelligence", "Predictive Analytics", "Interactive Dashboards"] },
+      { "name": "Cybersecurity & Information Security", "items": ["Security Architecture", "Vulnerability Assessment", "Identity & Access Management", "Data Protection", "Security Monitoring"] }
+    ],
+    "closing": "We Don't Chase Technology Trends. We Engineer Technology That Creates Value.",
+    "cta": "Explore Our Capabilities"
+  },
+  "faq": {
+    "headline": "Everything You Need to Know Before Getting Started.",
+    "text": "Have questions about AI, software development, or working with MTI AI SOLUTIONS? Find answers to some of the most common questions below.",
+    "items": [
+      ["What services does MTI AI SOLUTIONS provide?", "We provide AI solutions, intelligent automation, custom software development, enterprise AI systems, conversational AI, data intelligence, digital transformation, and cybersecurity solutions."],
+      ["Which industries do you work with?", "We work with businesses across multiple industries, including healthcare, manufacturing, finance, retail, real estate, education, logistics, and professional services."],
+      ["Can you develop customized solutions for our business?", "Yes. We design and develop tailored solutions based on your business objectives, operational requirements, and technical environment."],
+      ["Do you work with small and medium-sized businesses?", "Yes. Our solutions can be tailored to businesses of different sizes, from growing startups and SMEs to established enterprises."],
+      ["How long does a typical project take?", "Project timelines depend on the complexity, scope, and technical requirements. We establish an estimated timeline during the initial consultation and planning stages."],
+      ["Do you provide ongoing support and maintenance?", "Yes. We can provide ongoing technical support, maintenance, monitoring, and optimization based on the agreed service scope."],
+      ["How can we start working with MTI AI SOLUTIONS?", "Simply contact our team or request a consultation. We will discuss your requirements, understand your objectives, and identify the appropriate solution."]
+    ]
+  },
+  "contact": {
+    "headline": "Ready to Transform Your Business?",
+    "text": "Whether you're looking to automate operations, implement AI solutions, develop custom software, or accelerate your digital transformation, our team is ready to understand your vision and help turn it into reality.",
+    "ctas": ["Discuss Your Project", "Book a Consultation"],
+    "fieldLabels": ["Full Name", "Business Email", "Company Name", "Phone Number", "Country", "Industry", "Interested Service", "Project Timeline", "Tell Us About Your Project"],
+    "timelines": ["As soon as possible", "Within 3 months", "3–6 months", "6–12 months", "Not decided yet"],
+    "email": "info@mtiaisolutions.com",
+    "website": "https://mtiaisolutions.com/",
+    "linkedin": "https://www.linkedin.com/company/mti-solutions-g/",
+    "address": "Business Square, Delta Flowers Tower, 4 Hafez Ramadan, beside City Centre, Cairo, Egypt.",
+    "phone": "+20 105 577 8871"
+  },
+  "footer": {
+    "company": ["About Us", "Our Approach", "Contact Us"],
+    "connect": ["LinkedIn", "Official Email", "WhatsApp"],
+    "legal": ["Privacy Policy", "Terms & Conditions", "Cookie Policy"],
+    "brandLine": "Engineering custom AI and software solutions for businesses across industries.",
+    "copyright": "Copyright © 2026 MTI AI SOLUTIONS. All Rights Reserved."
+  },
+  "forbidden": ["MTI PLUS", "MTI AI SOLUTION ", "GU CART", "Case Stud", "Projects &", "budget", "Budget", "testimonial", "Testimonial", "ISO 27001", "certified", "Certified", "guarantee", "Rashpetco", "Al Harbi", "Delta Petroleum", "TensorFlow", "PyTorch", "OpenAI", "LangChain", "AWS", "Azure", "Google Cloud", "Kubernetes", "Docker", "React", "Python", "Laravel"]
+}

@@ -1,0 +1,11 @@
+node_modules/
+.env
+.netlify/
+# Confidential source documents and the full brand kit stay out of git (PLAN Q12).
+# The logo files the site uses are copied into public/assets.
+brief/
+brand/
+# Local scratch and test output
+scripts/_*
+test-results/
+playwright-report/
